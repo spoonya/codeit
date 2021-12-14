@@ -20,8 +20,11 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'no-unused-vars': 'warn',
+    'no-unused-expressions': 'off',
+    'react/jsx-no-constructed-context-values': 'off',
     'no-nested-ternary': 'off',
     'global-require': 'off',
+    'space-infix-ops': 'off',
     'react/jsx-filename-extension': 'off',
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     'react/function-component-definition': [

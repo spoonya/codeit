@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyles = createGlobalStyle`
+import { Theme } from './constants/theme/theme.type';
+
+const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   *,
   *::before,
   *::after {
@@ -15,8 +17,8 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'JetBrains Mono', monospace;
-    background-color: #fff;
-    color: #333;
+    background-color: ${({ theme }) => theme.background.primary};
+    color: ${({ theme }) => theme.text.primary};
     font-size: 1.6rem;
     height: 100%;
   }
