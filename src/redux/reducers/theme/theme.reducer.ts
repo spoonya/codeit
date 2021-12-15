@@ -1,5 +1,5 @@
 import { themeConfig } from '../../../constants/theme/theme.constant';
-import { ThemeState, ThemeAction, ThemeActionTypes } from './theme.type';
+import { ThemeState, ThemeAction, ThemeActionTypes } from './types/theme.type';
 
 const initialState: ThemeState = {
   themeMode: localStorage.getItem(themeConfig.storage) || themeConfig.dark,

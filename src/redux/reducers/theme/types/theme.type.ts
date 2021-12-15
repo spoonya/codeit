@@ -2,13 +2,13 @@ export enum ThemeActionTypes {
   SET_THEME = 'SET_THEME',
 }
 
-export type ThemeState = {
+export interface ThemeState {
   themeMode: string;
-};
+}
 
-export type ThemeSetTheme = {
+export interface SetThemeAction {
   type: ThemeActionTypes.SET_THEME;
   payload: string;
-};
+}
 
-export type ThemeAction = ThemeSetTheme;
+export type ThemeAction = SetThemeAction;

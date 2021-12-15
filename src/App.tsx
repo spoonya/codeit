@@ -1,20 +1,18 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import GlobalStyles from './global-styles';
+import GlobalStyle from './global-styles';
 import { themeDark, themeLight, themeConfig } from './constants/theme/theme.constant';
 import Project from './pages/Project.page';
 import useTypedSelector from './hooks/use-typed-selector.hook';
 
-function App(): React.ReactElement {
+export default function App(): React.ReactElement {
   const { themeMode } = useTypedSelector(({ theme }) => theme);
 
   return (
     <ThemeProvider theme={themeMode === themeConfig.light ? themeLight : themeDark}>
-      <GlobalStyles />
+      <GlobalStyle />
       <Project />
     </ThemeProvider>
   );
 }
-
-export default App;

@@ -1,6 +1,7 @@
-import { Theme, ThemeConfig } from './theme.type';
+import { DefaultTheme } from 'styled-components';
+import { ThemeConfig } from './types/theme.type';
 
-const themeLight: Theme = {
+export const themeLight: DefaultTheme = {
   text: {
     primary: '#38434f',
     secondary: '#656565',
@@ -18,7 +19,7 @@ const themeLight: Theme = {
   divider: '#d2d2d2',
 };
 
-const themeDark: Theme = {
+export const themeDark: DefaultTheme = {
   text: {
     primary: '#fff',
     secondary: '#cfcfcf',
@@ -35,10 +36,8 @@ const themeDark: Theme = {
   divider: '#151515',
 };
 
-const themeConfig: ThemeConfig = {
+export const themeConfig: ThemeConfig = {
   light: 'light',
   dark: 'dark',
   storage: 'codeit-theme',
 };
-
-export { themeLight, themeDark, themeConfig };
