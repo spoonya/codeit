@@ -4,5 +4,6 @@ export interface Inner {
 
 export interface Item {
   children: React.ReactNode;
+  isActive?: boolean;
   onClick?: () => void;
 }

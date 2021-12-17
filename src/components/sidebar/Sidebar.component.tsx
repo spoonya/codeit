@@ -16,9 +16,13 @@ Sidebar.Menu = function SidebarMenu(props: TSidebar.Inner): JSX.Element {
 };
 
 Sidebar.MenuItem = function SidebarMenuItem(props: TSidebar.Item): JSX.Element {
-  const { children, onClick } = props;
+  const { children, isActive, onClick } = props;
 
-  return <MenuItem onClick={onClick}>{children}</MenuItem>;
+  return (
+    <MenuItem isActive={isActive} onClick={onClick}>
+      {children}
+    </MenuItem>
+  );
 };
 
 Sidebar.Tab = function SidebarTab(props: TSidebar.Inner): JSX.Element {

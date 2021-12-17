@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/quotes */
 import styled from 'styled-components/macro';
+
+import * as TSidebar from '../types/sidebar.type';
 
 export const Container = styled.div`
   display: flex;
@@ -18,14 +21,39 @@ export const Menu = styled.ul`
   padding: 0 7px;
 `;
 
-export const MenuItem = styled.li`
+export const MenuItem = styled.li<TSidebar.Item>`
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  color: ${({ theme, isActive }) => (isActive ? theme.text.primary : theme.text.secondary)};
   cursor: pointer;
 
   transition: color 0.1s linear;
+
+  &::before {
+    position: absolute;
+
+    top: 50%;
+    left: -6px;
+
+    transform: translateY(-50%);
+
+    display: block;
+
+    content: '';
+
+    background-color: ${({ theme }) => theme.brand.primary};
+
+    width: 2px;
+    height: 0;
+
+    transition: height 0.1s linear;
+
+    ${({ isActive }) => isActive && 'height: 100%;'}
+  }
 
   &:hover {
     color: ${({ theme }) => theme.brand.primary};

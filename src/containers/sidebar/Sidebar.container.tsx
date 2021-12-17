@@ -21,10 +21,16 @@ export default function SidebarContainer(): JSX.Element {
         <Sidebar.MenuItem>
           <Share style={{ fontSize: 30 }} />
         </Sidebar.MenuItem>
-        <Sidebar.MenuItem onClick={() => toggleTab(sidebarTabs.settings)}>
+        <Sidebar.MenuItem
+          isActive={activeTab === sidebarTabs.settings}
+          onClick={() => toggleTab(sidebarTabs.settings)}
+        >
           <Settings style={{ fontSize: 30 }} />
         </Sidebar.MenuItem>
-        <Sidebar.MenuItem onClick={() => toggleTab(sidebarTabs.test)}>
+        <Sidebar.MenuItem
+          isActive={activeTab === sidebarTabs.test}
+          onClick={() => toggleTab(sidebarTabs.test)}
+        >
           <BugReport style={{ fontSize: 30 }} />
         </Sidebar.MenuItem>
       </Sidebar.Menu>
