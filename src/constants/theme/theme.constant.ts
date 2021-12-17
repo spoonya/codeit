@@ -1,4 +1,6 @@
 import { DefaultTheme } from 'styled-components';
+import { darken } from 'polished';
+
 import { ThemeConfig } from './types/theme.type';
 
 export const themeLight: DefaultTheme = {
@@ -14,7 +16,10 @@ export const themeLight: DefaultTheme = {
     line: '#333842',
     lineNum: '#a7a7a',
   },
-  brand: '#485fe0',
+  brand: {
+    primary: '#485fe0',
+    secondary: darken(0.1, '#485fe0'),
+  },
   black: '#000',
   divider: '#d2d2d2',
 };
@@ -31,7 +36,10 @@ export const themeDark: DefaultTheme = {
   editor: {
     line: '#333842',
   },
-  brand: '#485fe0',
+  brand: {
+    primary: '#485fe0',
+    secondary: darken(0.1, '#485fe0'),
+  },
   black: '#000',
   divider: '#151515',
 };

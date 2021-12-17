@@ -14,7 +14,10 @@ declare module 'styled-components' {
       line: string;
       lineNum?: string;
     };
-    brand: string;
+    brand: {
+      primary: string;
+      secondary: string;
+    };
     black: string;
     divider: string;
   }
