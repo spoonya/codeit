@@ -1,15 +1,16 @@
 import React from 'react';
-import ProjectContainer from '../components/project-container/Project-container.component';
+
+import Container from '../components/container/Container.component';
 import HeaderContainer from '../containers/Header.container';
 import SidebarContainer from '../containers/sidebar/Sidebar.container';
 
-export default function Project(): JSX.Element {
+export default function Project() {
   return (
     <>
       <HeaderContainer />
-      <ProjectContainer>
+      <Container>
         <SidebarContainer />
-      </ProjectContainer>
+      </Container>
     </>
   );
 }

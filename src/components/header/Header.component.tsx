@@ -1,9 +1,12 @@
 import React from 'react';
 
 import { Container, Group, Inner, Logo, ProjectTitle, SignIn } from './styles/header.style';
-import * as THeader from './types/header.type';
 
-export default function Header(props: THeader.Inner): JSX.Element {
+interface TInner {
+  children: React.ReactNode;
+}
+
+export default function Header(props: TInner) {
   const { children } = props;
 
   return (
@@ -13,13 +16,13 @@ export default function Header(props: THeader.Inner): JSX.Element {
   );
 }
 
-Header.Group = function HeaderGroup(props: THeader.Inner): JSX.Element {
+Header.Group = function HeaderGroup(props: TInner) {
   const { children } = props;
 
   return <Group>{children}</Group>;
 };
 
-Header.Logo = function HeaderLogo(): JSX.Element {
+Header.Logo = function HeaderLogo() {
   return (
     <Logo>
       code.
@@ -28,13 +31,13 @@ Header.Logo = function HeaderLogo(): JSX.Element {
   );
 };
 
-Header.ProjectTitle = function HeaderProjectTitle(props: THeader.Inner): JSX.Element {
+Header.ProjectTitle = function HeaderProjectTitle(props: TInner) {
   const { children } = props;
 
   return <ProjectTitle>{children}</ProjectTitle>;
 };
 
-Header.SignIn = function HeaderSignIn(props: THeader.Inner): JSX.Element {
+Header.SignIn = function HeaderSignIn(props: TInner) {
   const { children } = props;
 
   return <SignIn>{children}</SignIn>;

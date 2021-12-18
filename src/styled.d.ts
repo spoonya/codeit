@@ -18,7 +18,12 @@ declare module 'styled-components' {
       primary: string;
       secondary: string;
     };
-    black: string;
+    black: {
+      primary: string;
+    };
+    white: {
+      primary: string;
+    };
     divider: string;
   }
 }

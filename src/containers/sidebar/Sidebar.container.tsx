@@ -2,9 +2,9 @@ import React from 'react';
 import { Settings, Share, BugReport } from '@mui/icons-material';
 
 import Sidebar from '../../components/sidebar/Sidebar.component';
-import sidebarTabs from '../../constants/sidebar/sidebar.constant';
+import sidebarTabs from '../../constants/sidebar.constant';
 
-export default function SidebarContainer(): JSX.Element {
+export default function SidebarContainer() {
   const [activeTab, setActiveTab] = React.useState('');
 
   const toggleTab = (tabName: string): void => {
@@ -21,12 +21,14 @@ export default function SidebarContainer(): JSX.Element {
         <Sidebar.MenuItem>
           <Share style={{ fontSize: 30 }} />
         </Sidebar.MenuItem>
+
         <Sidebar.MenuItem
           isActive={activeTab === sidebarTabs.settings}
           onClick={() => toggleTab(sidebarTabs.settings)}
         >
           <Settings style={{ fontSize: 30 }} />
         </Sidebar.MenuItem>
+
         <Sidebar.MenuItem
           isActive={activeTab === sidebarTabs.test}
           onClick={() => toggleTab(sidebarTabs.test)}

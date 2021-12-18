@@ -1,11 +1,15 @@
 import { DefaultTheme } from 'styled-components';
 import { darken } from 'polished';
 
-import { ThemeConfig } from './types/theme.type';
+interface ThemeConfig {
+  light: string;
+  dark: string;
+  storage: string;
+}
 
 export const themeLight: DefaultTheme = {
   text: {
-    primary: '#38434f',
+    primary: '#353535',
     secondary: '#656565',
   },
   background: {
@@ -18,16 +22,21 @@ export const themeLight: DefaultTheme = {
   },
   brand: {
     primary: '#485fe0',
-    secondary: darken(0.1, '#485fe0'),
+    secondary: darken(0.06, '#485fe0'),
   },
-  black: '#000',
+  black: {
+    primary: '#000',
+  },
+  white: {
+    primary: '#fff',
+  },
   divider: '#d2d2d2',
 };
 
 export const themeDark: DefaultTheme = {
   text: {
     primary: '#fff',
-    secondary: '#cfcfcf',
+    secondary: '#adadad',
   },
   background: {
     primary: '#282c34',
@@ -38,9 +47,14 @@ export const themeDark: DefaultTheme = {
   },
   brand: {
     primary: '#485fe0',
-    secondary: darken(0.1, '#485fe0'),
+    secondary: darken(0.06, '#485fe0'),
   },
-  black: '#000',
+  black: {
+    primary: '#000',
+  },
+  white: {
+    primary: '#fff',
+  },
   divider: '#151515',
 };
 

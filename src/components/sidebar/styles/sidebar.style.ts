@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/quotes */
 import styled from 'styled-components/macro';
 
 import * as TSidebar from '../types/sidebar.type';
@@ -52,7 +51,7 @@ export const MenuItem = styled.li<TSidebar.Item>`
 
     transition: height 0.1s linear;
 
-    ${({ isActive }) => isActive && 'height: 100%;'}
+    ${({ isActive }) => isActive && 'height: 170%;'}
   }
 
   &:hover {

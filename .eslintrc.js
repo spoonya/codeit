@@ -25,6 +25,8 @@ module.exports = {
     'object-curly-newline': 'off',
     'no-unused-expressions': 'warn',
     'no-nested-ternary': 'off',
+    'react/prop-types': 'off',
+    'react/require-default-props': 'off',
     '@typescript-eslint/default-param-last': 'off',
     'global-require': 'off',
     '@typescript-eslint/no-unused-vars': 'warn',

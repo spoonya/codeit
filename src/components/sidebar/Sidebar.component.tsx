@@ -3,19 +3,19 @@ import React from 'react';
 import { Container, Menu, MenuItem, Tab, TabHeader, TabInner } from './styles/sidebar.style';
 import * as TSidebar from './types/sidebar.type';
 
-export default function Sidebar(props: TSidebar.Inner): JSX.Element {
+export default function Sidebar(props: TSidebar.Inner) {
   const { children } = props;
 
   return <Container>{children}</Container>;
 }
 
-Sidebar.Menu = function SidebarMenu(props: TSidebar.Inner): JSX.Element {
+Sidebar.Menu = function SidebarMenu(props: TSidebar.Inner) {
   const { children } = props;
 
   return <Menu>{children}</Menu>;
 };
 
-Sidebar.MenuItem = function SidebarMenuItem(props: TSidebar.Item): JSX.Element {
+Sidebar.MenuItem = function SidebarMenuItem(props: TSidebar.Item) {
   const { children, isActive, onClick } = props;
 
   return (
@@ -25,13 +25,13 @@ Sidebar.MenuItem = function SidebarMenuItem(props: TSidebar.Item): JSX.Element {
   );
 };
 
-Sidebar.Tab = function SidebarTab(props: TSidebar.Inner): JSX.Element {
+Sidebar.Tab = function SidebarTab(props: TSidebar.Inner) {
   const { children } = props;
 
   return <Tab>{children}</Tab>;
 };
 
-Sidebar.TabHeader = function SidebarTabHeader(props: TSidebar.Inner): JSX.Element {
+Sidebar.TabHeader = function SidebarTabHeader(props: TSidebar.Inner) {
   const { children } = props;
 
   return (

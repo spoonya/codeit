@@ -1,19 +1,20 @@
 import styled from 'styled-components/macro';
-import ContentContainer from '../../container/styles/container.style';
 
 export const Container = styled.header`
-  height: 42px;
-
   background-color: ${({ theme }) => theme.background.secondary};
   border-bottom: 1px solid ${({ theme }) => theme.divider};
+
+  height: 42px;
 `;
 
-export const Inner = styled(ContentContainer)`
+export const Inner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 7px 0;
+  padding: 7px 15px;
+
+  width: 100%;
 `;
 
 export const Group = styled.div`
@@ -38,6 +39,7 @@ export const ProjectTitle = styled.h2`
 
 export const SignIn = styled.button`
   font-size: 14px;
+  color: ${({ theme }) => theme.white.primary};
 
   padding: 5px;
 

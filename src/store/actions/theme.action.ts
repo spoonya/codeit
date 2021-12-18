@@ -1,6 +1,6 @@
 import { Dispatch } from 'react';
-import { themeConfig } from '../../constants/theme/theme.constant';
-import { ThemeAction, ThemeActionTypes } from '../reducers/theme/types/theme.type';
+import { themeConfig } from '../../constants/theme.constant';
+import { ThemeAction, ThemeActionTypes } from '../reducers/theme/theme.type';
 
 const setLocalStorage = (theme: string) => {
   localStorage.setItem(themeConfig.storage, theme);

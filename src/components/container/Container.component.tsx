@@ -1,9 +1,18 @@
 import React from 'react';
+import styled from 'styled-components/macro';
 
-import Inner from './styles/container.style';
-import * as TContainer from './types/container.type';
+interface TInner {
+  children: React.ReactNode;
+}
 
-export default function Container(props: TContainer.Inner): JSX.Element {
+const Inner = styled.div`
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - 42px);
+`;
+
+export default function Container(props: TInner) {
   const { children } = props;
 
   return <Inner>{children}</Inner>;

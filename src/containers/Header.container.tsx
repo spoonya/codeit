@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from '../components/header/Header.component';
 
-export default function HeaderContainer(): JSX.Element {
+export default function HeaderContainer() {
   return (
     <Header>
       <Header.Group>

@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle from './global-style';
-import { themeDark, themeLight, themeConfig } from './constants/theme/theme.constant';
+import { themeDark, themeLight, themeConfig } from './constants/theme.constant';
 import useTypedSelector from './hooks/use-typed-selector.hook';
 import Project from './pages/Project.page';
 

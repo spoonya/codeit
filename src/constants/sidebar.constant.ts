@@ -1,4 +1,7 @@
-import { SidebarTabs } from './types/sidebar-tabs.type';
+export interface SidebarTabs {
+  settings: string;
+  test: string;
+}
 
 const sidebarTabs: SidebarTabs = {
   settings: 'settings',
