@@ -30,7 +30,7 @@ export const themeLight: DefaultTheme = {
   },
   white: {
     primary: '#fff',
-    secondary: '#ccc',
+    secondary: '#ddd',
   },
   divider: '#d2d2d2',
 };
@@ -38,7 +38,7 @@ export const themeLight: DefaultTheme = {
 export const themeDark: DefaultTheme = {
   text: {
     primary: '#fff',
-    secondary: '#adadad',
+    secondary: '#cacaca',
   },
   background: {
     primary: '#282c34',

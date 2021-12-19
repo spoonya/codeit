@@ -28,9 +28,16 @@ export default function SidebarContainer() {
         >
           <Settings style={{ fontSize: 30 }} />
         </Sidebar.MenuItem>
+
+        <Sidebar.MenuItem
+          isActive={activeTab === sidebarTabs.test}
+          onClick={() => toggleTab(sidebarTabs.test)}
+        >
+          <Settings style={{ fontSize: 30 }} />
+        </Sidebar.MenuItem>
       </Sidebar.Menu>
 
-      {activeTab === sidebarTabs.settings && <SettingsTab />}
+      <SettingsTab isActive={activeTab === sidebarTabs.settings} />
     </Sidebar>
   );
 }

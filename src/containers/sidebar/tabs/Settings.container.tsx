@@ -5,10 +5,13 @@ import FontSizeSetting from './settings/Font-size.container';
 import IndentSizeSetting from './settings/Indent-size.container';
 import LocalizationSetting from './settings/Localization.container';
 import ThemeSetting from './settings/Theme.container';
+import { Tab as TabProps } from '../../../components/sidebar/types/sidebar.type';
 
-export default function SettingsTab() {
+export default function SettingsTab(props: TabProps) {
+  const { isActive } = props;
+
   return (
-    <Sidebar.Tab>
+    <Sidebar.Tab isActive={isActive}>
       <Sidebar.TabHeader>Settings</Sidebar.TabHeader>
       <Sidebar.TabList>
         <Sidebar.TabListItem>

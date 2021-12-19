@@ -63,11 +63,15 @@ export const MenuItem = styled.li<TSidebar.Item>`
   }
 `;
 
-export const Tab = styled.div`
+export const Tab = styled.div<TSidebar.Tab>`
+  display: none;
+
   width: 245px;
   height: 100%;
 
   border-left: 1px solid ${({ theme }) => theme.divider};
+
+  ${({ isActive }) => isActive && 'display: block;'}
 `;
 
 export const TabHeader = styled.div`
@@ -81,7 +85,22 @@ export const TabHeaderInner = styled.div`
 `;
 
 export const TabList = styled.ul`
-  padding: 20px 15px 0;
+  padding: 20px 15px;
+
+  overflow-y: auto;
+  height: calc(100vh - 90px);
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme.background.secondary};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.brand.primary};
+  }
 `;
 
 export const TabSubList = styled.ul`
@@ -90,7 +109,7 @@ export const TabSubList = styled.ul`
 
 export const TabListItem = styled.li`
   &:not(:last-child) {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
 `;
 

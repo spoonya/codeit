@@ -40,10 +40,10 @@ Sidebar.MenuItem = function SidebarMenuItem(props: TSidebar.Item) {
   );
 };
 
-Sidebar.Tab = function SidebarTab(props: TSidebar.Inner) {
-  const { children } = props;
+Sidebar.Tab = function SidebarTab(props: TSidebar.Tab) {
+  const { children, isActive } = props;
 
-  return <Tab>{children}</Tab>;
+  return <Tab isActive={isActive}>{children}</Tab>;
 };
 
 Sidebar.TabHeader = function SidebarTabHeader(props: TSidebar.Inner) {
