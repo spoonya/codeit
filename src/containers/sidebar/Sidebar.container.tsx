@@ -1,8 +1,9 @@
 import React from 'react';
-import { Settings, Share, BugReport } from '@mui/icons-material';
+import { Settings, Share } from '@mui/icons-material';
 
 import Sidebar from '../../components/sidebar/Sidebar.component';
 import sidebarTabs from '../../constants/sidebar.constant';
+import SettingsTab from './tabs/Settings.container';
 
 export default function SidebarContainer() {
   const [activeTab, setActiveTab] = React.useState('');
@@ -21,33 +22,15 @@ export default function SidebarContainer() {
         <Sidebar.MenuItem>
           <Share style={{ fontSize: 30 }} />
         </Sidebar.MenuItem>
-
         <Sidebar.MenuItem
           isActive={activeTab === sidebarTabs.settings}
           onClick={() => toggleTab(sidebarTabs.settings)}
         >
           <Settings style={{ fontSize: 30 }} />
         </Sidebar.MenuItem>
-
-        <Sidebar.MenuItem
-          isActive={activeTab === sidebarTabs.test}
-          onClick={() => toggleTab(sidebarTabs.test)}
-        >
-          <BugReport style={{ fontSize: 30 }} />
-        </Sidebar.MenuItem>
       </Sidebar.Menu>
 
-      {activeTab === sidebarTabs.settings ? (
-        <Sidebar.Tab>
-          <Sidebar.TabHeader>Settings</Sidebar.TabHeader>
-        </Sidebar.Tab>
-      ) : null}
-
-      {activeTab === sidebarTabs.test ? (
-        <Sidebar.Tab>
-          <Sidebar.TabHeader>Test</Sidebar.TabHeader>
-        </Sidebar.Tab>
-      ) : null}
+      {activeTab === sidebarTabs.settings && <SettingsTab />}
     </Sidebar>
   );
 }

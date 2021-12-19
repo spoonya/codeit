@@ -1,5 +1,6 @@
 import { DefaultTheme } from 'styled-components';
 import { darken } from 'polished';
+import { createTheme } from '@mui/material/styles';
 
 interface ThemeConfig {
   light: string;
@@ -29,6 +30,7 @@ export const themeLight: DefaultTheme = {
   },
   white: {
     primary: '#fff',
+    secondary: '#ccc',
   },
   divider: '#d2d2d2',
 };
@@ -54,9 +56,17 @@ export const themeDark: DefaultTheme = {
   },
   white: {
     primary: '#fff',
+    secondary: '#ccc',
   },
   divider: '#151515',
 };
+
+export const themeMUI = createTheme({
+  typography: {
+    fontFamily: ['JetBrains Mono'].join(','),
+    fontSize: 14,
+  },
+});
 
 export const themeConfig: ThemeConfig = {
   light: 'light',

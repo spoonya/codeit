@@ -17,7 +17,7 @@ export const Menu = styled.ul`
   height: 100%;
   width: 42px;
 
-  padding: 0 7px;
+  padding: 15px 7px 0;
 `;
 
 export const MenuItem = styled.li<TSidebar.Item>`
@@ -76,6 +76,92 @@ export const TabHeader = styled.div`
   text-transform: uppercase;
 `;
 
-export const TabInner = styled.div`
+export const TabHeaderInner = styled.div`
   padding: 15px 10px;
+`;
+
+export const TabList = styled.ul`
+  padding: 20px 15px 0;
+`;
+
+export const TabSubList = styled.ul`
+  padding-left: 10px;
+`;
+
+export const TabListItem = styled.li`
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+`;
+
+export const TabSubListItem = styled.li`
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+`;
+
+export const TabListName = styled.p`
+  margin-bottom: 8px;
+`;
+
+export const TabSwitch = styled.div`
+  .css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked {
+    color: ${({ theme }) => theme.brand.primary};
+  }
+
+  .css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+    background-color: ${({ theme }) => theme.brand.primary};
+  }
+
+  .MuiTypography-root {
+    font-size: 14px;
+    user-select: none;
+    color: ${({ theme }) => theme.text.primary};
+  }
+`;
+
+export const TabSelect = styled.div`
+  .MuiFormControl-root {
+    margin: 0;
+    min-width: 145px;
+  }
+
+  .MuiInput-root {
+    font-size: 14px;
+    color: ${({ theme }) => theme.text.secondary};
+  }
+
+  .MuiInputLabel-root {
+    font-size: 19px;
+    color: ${({ theme }) => theme.text.primary};
+    margin-bottom: 15px;
+  }
+
+  .MuiSelect-nativeInput {
+    font-size: 14px;
+  }
+
+  .MuiInput-underline::before {
+    border-bottom: 1px solid ${({ theme }) => theme.white.secondary};
+  }
+
+  .MuiInput-underline::after {
+    content: none;
+  }
+
+  .MuiInput-underline:hover:not(.Mui-disabled):before {
+    border-bottom: 1px solid ${({ theme }) => theme.white.secondary};
+  }
+
+  .css-10ascl4-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+    color: ${({ theme }) => theme.text.primary};
+  }
+
+  svg {
+    color: ${({ theme }) => theme.text.secondary};
+  }
+
+  .MuiSelect-select:focus {
+    background: none;
+  }
 `;

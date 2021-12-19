@@ -23,9 +23,10 @@ const GlobalStyle = createGlobalStyle`
 
   input {
     font: inherit;
+    color: inherit;
     border: none;
-    outline: none;
     background: none;
+    outline: 0;
   }
 
   input[type='button'] {
@@ -33,19 +34,43 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
+  ul,
+  li {
+  margin: 0;
+  padding: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+
   button {
+    display: inline-block;
+
     font: inherit;
+
     padding: 0;
+    margin: 0;
+
+    user-select: none;
+
     cursor: pointer;
-    color: inherit;
+
     border: none;
-    outline: none;
     background: none;
+
+    &:focus {
+      outline: 0;
+    }
   }
 
   img {
     max-width: 100%;
     height: auto;
+  }
+
+  p {
+    margin: 0;
   }
 
   a {

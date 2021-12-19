@@ -23,6 +23,7 @@ declare module 'styled-components' {
     };
     white: {
       primary: string;
+      secondary: string;
     };
     divider: string;
   }

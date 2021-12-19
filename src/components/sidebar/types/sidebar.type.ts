@@ -7,3 +7,9 @@ export interface Item {
   isActive?: boolean;
   onClick?: () => void;
 }
+
+export interface Switch {
+  label: string;
+  checked: boolean;
+  onChange: () => void;
+}
