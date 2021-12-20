@@ -88,6 +88,73 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme.background.secondary};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.brand.primary};
+  }
+
+  /*================Resizer================*/
+  .Resizer {
+    z-index: 1;
+
+    box-sizing: border-box;
+
+    opacity: 1;
+    background-color: ${({ theme }) => theme.divider};
+
+    background-clip: padding-box;
+  }
+
+  .Resizer.horizontal {
+    width: 100%;
+    height: 11px;
+    margin: -5px 0;
+
+    cursor: row-resize;
+
+    border-top: 5px solid rgba(255, 255, 255, 0);
+    border-bottom: 5px solid rgba(255, 255, 255, 0);
+  }
+
+  .Resizer.vertical {
+    width: 11px;
+    margin: 0 -5px;
+
+    cursor: col-resize;
+
+    border-right: 5px solid rgba(255, 255, 255, 0);
+    border-left: 5px solid rgba(255, 255, 255, 0);
+  }
+
+  .Resizer.disabled {
+    cursor: not-allowed;
+  }
+
+  .DragLayer {
+    z-index: 1;
+
+    pointer-events: none;
+  }
+
+  .DragLayer.resizing {
+    pointer-events: auto;
+  }
+
+  .DragLayer.horizontal {
+    cursor: row-resize;
+  }
+
+  .DragLayer.vertical {
+    cursor: col-resize;
+  }
 `;
 
 export default GlobalStyle;

@@ -64,7 +64,11 @@ export const themeDark: DefaultTheme = {
 export const themeMUI = createTheme({
   typography: {
     fontFamily: ['JetBrains Mono'].join(','),
-    fontSize: 14,
+  },
+  palette: {
+    primary: {
+      main: '#485fe0',
+    },
   },
 });
 

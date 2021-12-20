@@ -3,7 +3,7 @@ import { Settings, Share } from '@mui/icons-material';
 
 import Sidebar from '../../components/sidebar/Sidebar.component';
 import sidebarTabs from '../../constants/sidebar.constant';
-import SettingsTab from './tabs/Settings.container';
+import SettingsTab from './tabs/settings';
 
 export default function SidebarContainer() {
   const [activeTab, setActiveTab] = React.useState('');
@@ -25,13 +25,6 @@ export default function SidebarContainer() {
         <Sidebar.MenuItem
           isActive={activeTab === sidebarTabs.settings}
           onClick={() => toggleTab(sidebarTabs.settings)}
-        >
-          <Settings style={{ fontSize: 30 }} />
-        </Sidebar.MenuItem>
-
-        <Sidebar.MenuItem
-          isActive={activeTab === sidebarTabs.test}
-          onClick={() => toggleTab(sidebarTabs.test)}
         >
           <Settings style={{ fontSize: 30 }} />
         </Sidebar.MenuItem>

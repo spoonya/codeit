@@ -1,4 +1,6 @@
 import styled from 'styled-components/macro';
+import { MenuItem as SelectItem, MenuItemProps } from '@mui/material';
+import { styled as styledMui } from '@mui/material/styles';
 
 import * as TSidebar from '../types/sidebar.type';
 
@@ -89,18 +91,6 @@ export const TabList = styled.ul`
 
   overflow-y: auto;
   height: calc(100vh - 90px);
-
-  &::-webkit-scrollbar {
-    width: 7px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: ${({ theme }) => theme.background.secondary};
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.brand.primary};
-  }
 `;
 
 export const TabSubList = styled.ul`
@@ -124,11 +114,11 @@ export const TabListName = styled.p`
 `;
 
 export const TabSwitch = styled.div`
-  .css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked {
+  .MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked {
     color: ${({ theme }) => theme.brand.primary};
   }
 
-  .css-5ryogn-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
+  .MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
     background-color: ${({ theme }) => theme.brand.primary};
   }
 
@@ -172,7 +162,7 @@ export const TabSelect = styled.div`
     border-bottom: 1px solid ${({ theme }) => theme.white.secondary};
   }
 
-  .css-10ascl4-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  .MuiInputLabel-root.Mui-focused {
     color: ${({ theme }) => theme.text.primary};
   }
 
@@ -183,4 +173,12 @@ export const TabSelect = styled.div`
   .MuiSelect-select:focus {
     background: none;
   }
+
+  .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+    background-color: ${({ theme }) => theme.background.secondary};
+  }
 `;
+
+export const MenuItemStyled = styledMui(SelectItem)<MenuItemProps>({
+  fontSize: 14,
+});

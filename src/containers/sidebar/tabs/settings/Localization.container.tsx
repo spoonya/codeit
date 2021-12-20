@@ -1,7 +1,8 @@
-import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import { FormControl, InputLabel, Select } from '@mui/material';
 import React from 'react';
 
 import Sidebar from '../../../../components/sidebar/Sidebar.component';
+import { MenuItemStyled } from '../../../../components/sidebar/styles/sidebar.style';
 
 export default function LocalizationSetting() {
   return (
@@ -10,12 +11,8 @@ export default function LocalizationSetting() {
         <FormControl variant="standard">
           <InputLabel shrink>Language</InputLabel>
           <Select value="en" displayEmpty>
-            <MenuItem value="en" style={{ fontSize: 14 }}>
-              English
-            </MenuItem>
-            <MenuItem value="ru" style={{ fontSize: 14 }}>
-              Русский
-            </MenuItem>
+            <MenuItemStyled value="en">English</MenuItemStyled>
+            <MenuItemStyled value="ru">Русский</MenuItemStyled>
           </Select>
         </FormControl>
       </Sidebar.TabSelect>

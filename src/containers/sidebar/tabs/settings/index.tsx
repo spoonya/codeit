@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Sidebar from '../../../components/sidebar/Sidebar.component';
-import FontSizeSetting from './settings/Font-size.container';
-import IndentSizeSetting from './settings/Indent-size.container';
-import LocalizationSetting from './settings/Localization.container';
-import ThemeSetting from './settings/Theme.container';
-import { Tab as TabProps } from '../../../components/sidebar/types/sidebar.type';
+import Sidebar from '../../../../components/sidebar/Sidebar.component';
+import FontSizeSetting from './Font-size.container';
+import IndentSizeSetting from './Indent-size.container';
+import LocalizationSetting from './Localization.container';
+import ThemeSetting from './Theme.container';
+import { Tab as TabProps } from '../../../../components/sidebar/types/sidebar.type';
 
 export default function SettingsTab(props: TabProps) {
   const { isActive } = props;

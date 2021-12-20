@@ -1,7 +1,8 @@
-import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import { FormControl, InputLabel, Select } from '@mui/material';
 import React from 'react';
 
 import Sidebar from '../../../../components/sidebar/Sidebar.component';
+import { MenuItemStyled } from '../../../../components/sidebar/styles/sidebar.style';
 
 export default function FontSizeSetting() {
   return (
@@ -10,18 +11,10 @@ export default function FontSizeSetting() {
         <FormControl variant="standard">
           <InputLabel shrink>Font size</InputLabel>
           <Select value="normal" displayEmpty>
-            <MenuItem value="small" style={{ fontSize: 14 }}>
-              small
-            </MenuItem>
-            <MenuItem value="normal" style={{ fontSize: 14 }}>
-              normal
-            </MenuItem>
-            <MenuItem value="large" style={{ fontSize: 14 }}>
-              large
-            </MenuItem>
-            <MenuItem value="huge" style={{ fontSize: 14 }}>
-              huge
-            </MenuItem>
+            <MenuItemStyled value="small">small</MenuItemStyled>
+            <MenuItemStyled value="normal">normal</MenuItemStyled>
+            <MenuItemStyled value="large">large</MenuItemStyled>
+            <MenuItemStyled value="huge">huge</MenuItemStyled>
           </Select>
         </FormControl>
       </Sidebar.TabSelect>

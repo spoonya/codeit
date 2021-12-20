@@ -31,7 +31,7 @@ Sidebar.Menu = function SidebarMenu(props: TSidebar.Inner) {
 };
 
 Sidebar.MenuItem = function SidebarMenuItem(props: TSidebar.Item) {
-  const { children, isActive, onClick } = props;
+  const { isActive, onClick, children } = props;
 
   return (
     <MenuItem isActive={isActive} onClick={onClick}>
