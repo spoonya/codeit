@@ -1,33 +1,43 @@
 interface Settings {
-  readonly indentSize: {
-    readonly defaultValue: number;
-    readonly values: {
-      readonly twoSpaces: number;
-      readonly fourSpaces: number;
-    };
-    readonly storage: string;
+  theme: {
+    light: string;
+    dark: string;
+    storage: string;
   };
-  readonly fontSize: {
-    readonly defaultValue: number;
-    readonly values: {
-      readonly small: number;
-      readonly normal: number;
-      readonly large: number;
-      readonly huge: number;
+  indentSize: {
+    defaultValue: number;
+    values: {
+      twoSpaces: number;
+      fourSpaces: number;
     };
-    readonly storage: string;
+    storage: string;
   };
-  readonly language: {
-    readonly defaultValue: string;
-    readonly values: {
-      readonly ru: string;
-      readonly en: string;
+  fontSize: {
+    defaultValue: number;
+    values: {
+      small: number;
+      normal: number;
+      large: number;
+      huge: number;
     };
-    readonly storage: string;
+    storage: string;
+  };
+  localization: {
+    defaultValue: string;
+    values: {
+      ru: string;
+      en: string;
+    };
+    storage: string;
   };
 }
 
 export const settings: Settings = {
+  theme: {
+    light: 'light',
+    dark: 'dark',
+    storage: 'codeit-theme',
+  },
   indentSize: {
     defaultValue: 2,
     values: {
@@ -39,14 +49,14 @@ export const settings: Settings = {
   fontSize: {
     defaultValue: 14,
     values: {
-      small: 10,
+      small: 12,
       normal: 14,
       large: 18,
-      huge: 24,
+      huge: 22,
     },
     storage: 'codeit-fontSize',
   },
-  language: {
+  localization: {
     defaultValue: 'en-EN',
     values: {
       ru: 'ru-RU',

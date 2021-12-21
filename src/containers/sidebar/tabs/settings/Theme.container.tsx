@@ -1,7 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Sidebar from '../../../../components/sidebar/Sidebar.component';
-import { themeConfig } from '../../../../constants/theme.constant';
+import { settings } from '../../../../constants/sidebar-tabs/settings.constant';
 import useActions from '../../../../hooks/use-actions.hook';
 import useTypedSelector from '../../../../hooks/use-typed-selector.hook';
 
@@ -9,12 +10,14 @@ export default function ThemeSetting() {
   const { themeMode } = useTypedSelector((store) => store.theme);
   const { toggleTheme } = useActions();
 
+  const { t } = useTranslation();
+
   return (
     <Sidebar.TabSubListItem>
       <Sidebar.TabSwitch
-        label="Light theme"
+        label={t('sidebar.settings.general.lightTheme')}
         onChange={() => toggleTheme(themeMode)}
-        checked={themeMode === themeConfig.light}
+        checked={themeMode === settings.theme.light}
       />
     </Sidebar.TabSubListItem>
   );

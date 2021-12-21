@@ -1,21 +1,24 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Sidebar from '../../../../components/sidebar/Sidebar.component';
 import FontSizeSetting from './Font-size.container';
 import IndentSizeSetting from './Indent-size.container';
 import LocalizationSetting from './Localization.container';
 import ThemeSetting from './Theme.container';
-import { Tab as TabProps } from '../../../../components/sidebar/types/sidebar.type';
+import { Tab } from '../../../../components/sidebar/types/sidebar.type';
 
-export default function SettingsTab(props: TabProps) {
+export default function SettingsTab(props: Tab) {
   const { isActive } = props;
+
+  const { t } = useTranslation();
 
   return (
     <Sidebar.Tab isActive={isActive}>
-      <Sidebar.TabHeader>Settings</Sidebar.TabHeader>
+      <Sidebar.TabHeader>{t('sidebar.settings.title')}</Sidebar.TabHeader>
       <Sidebar.TabList>
         <Sidebar.TabListItem>
-          <Sidebar.TabListName>General</Sidebar.TabListName>
+          <Sidebar.TabListName>{t('sidebar.settings.general.title')}</Sidebar.TabListName>
           <Sidebar.TabSubList>
             <ThemeSetting />
             <LocalizationSetting />
@@ -23,7 +26,7 @@ export default function SettingsTab(props: TabProps) {
         </Sidebar.TabListItem>
 
         <Sidebar.TabListItem>
-          <Sidebar.TabListName>Editor</Sidebar.TabListName>
+          <Sidebar.TabListName>{t('sidebar.settings.editor.title')}</Sidebar.TabListName>
           <Sidebar.TabSubList>
             <FontSizeSetting />
             <IndentSizeSetting />

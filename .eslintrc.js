@@ -16,6 +16,9 @@ module.exports = {
   plugins: ['react'],
   parser: '@typescript-eslint/parser',
   rules: {
+    'implicit-arrow-linebreak': 'off',
+    'operator-linebreak': 'off',
+    'function-paren-newline': 'off',
     'react/prop-types': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',

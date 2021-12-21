@@ -25,7 +25,7 @@ export default function Project() {
           <script>${js}</script>
         </html>
       `);
-    }, 500);
+    }, 700);
 
     return () => clearTimeout(timeout);
   }, [html, css, js]);
@@ -36,7 +36,7 @@ export default function Project() {
       <Container>
         <SidebarContainer />
         <Container.Inner>
-          <SplitPane split="horizontal" defaultSizes={[65, 20, 25]} minSize={[28, 8, 28]}>
+          <SplitPane split="horizontal" defaultSizes={[65, 20, 25]} minSize={[28, 20, 28]}>
             <div>
               <SplitPane split="vertical" minSize={52}>
                 <CodeEditor language="html" code={html} onChanged={setHtml} langLabel="html" />

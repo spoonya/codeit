@@ -2,7 +2,7 @@ import React from 'react';
 import { Settings, Share } from '@mui/icons-material';
 
 import Sidebar from '../../components/sidebar/Sidebar.component';
-import sidebarTabs from '../../constants/sidebar.constant';
+import sidebarTabs from '../../constants/sidebar-tabs/tabs.constant';
 import SettingsTab from './tabs/settings';
 
 export default function SidebarContainer() {

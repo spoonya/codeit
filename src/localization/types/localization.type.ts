@@ -16,7 +16,7 @@ export default interface Localization {
       general: {
         title: string;
         lightTheme: string;
-        lang: string;
+        language: string;
       };
       editor: {
         title: string;
@@ -34,5 +34,8 @@ export default interface Localization {
         };
       };
     };
+  };
+  console: {
+    title: string;
   };
 }

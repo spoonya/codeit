@@ -18,7 +18,7 @@ const russian: Localization = {
       general: {
         title: 'Общие',
         lightTheme: 'Светлая тема',
-        lang: 'Язык',
+        language: 'Язык',
       },
       editor: {
         title: 'Редактор',
@@ -36,6 +36,9 @@ const russian: Localization = {
         },
       },
     },
+  },
+  console: {
+    title: 'Консоль',
   },
 };
 

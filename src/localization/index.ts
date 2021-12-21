@@ -1,10 +1,12 @@
 import i18n from 'i18next';
 
+import { settings } from '../constants/sidebar-tabs/settings.constant';
+import { getStorage } from '../helpers/storage.helper';
 import english from './english.localization';
 import russian from './russian.localization';
 
-export default i18n.init({
-  lng: 'en-EN',
+i18n.init({
+  lng: getStorage(settings.localization.storage) || 'en-EN',
   fallbackLng: 'en',
   ns: ['translations'],
   defaultNS: 'translations',
@@ -19,13 +21,15 @@ export default i18n.init({
   resources: {
     en: {
       translations: {
-        english,
+        ...english,
       },
     },
     ru: {
       translations: {
-        russian,
+        ...russian,
       },
     },
   },
 });
+
+export default i18n;

@@ -18,7 +18,7 @@ const english: Localization = {
       general: {
         title: 'General',
         lightTheme: 'Light theme',
-        lang: 'Language',
+        language: 'Language',
       },
       editor: {
         title: 'Editor',
@@ -36,6 +36,9 @@ const english: Localization = {
         },
       },
     },
+  },
+  console: {
+    title: 'Console',
   },
 };
 

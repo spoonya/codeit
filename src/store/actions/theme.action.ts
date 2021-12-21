@@ -1,9 +1,11 @@
 import { Dispatch } from 'react';
-import { themeConfig } from '../../constants/theme.constant';
+import { loader } from '@monaco-editor/react';
+
 import { ThemeAction, ThemeActionTypes } from '../reducers/theme/theme.type';
+import { settings } from '../../constants/sidebar-tabs/settings.constant';
 
 const setLocalStorage = (theme: string) => {
-  localStorage.setItem(themeConfig.storage, theme);
+  localStorage.setItem(settings.theme.storage, theme);
 };
 
 const setTheme = (theme: string): ThemeAction => ({
@@ -11,12 +13,24 @@ const setTheme = (theme: string): ThemeAction => ({
   payload: theme,
 });
 
+const toggleEditorTheme = (theme: string) => {
+  loader.init().then((monaco) => {
+    if (theme === settings.theme.light) {
+      monaco.editor.setTheme(settings.theme.light);
+    } else {
+      monaco.editor.setTheme(settings.theme.dark);
+    }
+  });
+};
+
 export const toggleTheme = (theme: string) => (dispatch: Dispatch<ThemeAction>) => {
-  if (theme === themeConfig.light) {
-    dispatch(setTheme(themeConfig.dark));
-    setLocalStorage(themeConfig.dark);
+  if (theme === settings.theme.light) {
+    dispatch(setTheme(settings.theme.dark));
+    toggleEditorTheme(settings.theme.dark);
+    setLocalStorage(settings.theme.dark);
   } else {
-    dispatch(setTheme(themeConfig.light));
-    setLocalStorage(themeConfig.light);
+    dispatch(setTheme(settings.theme.light));
+    toggleEditorTheme(settings.theme.light);
+    setLocalStorage(settings.theme.light);
   }
 };
