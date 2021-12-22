@@ -1,4 +1,7 @@
 export default interface Localization {
+  header: {
+    signIn: string;
+  };
   tooltips: {
     sidebar: {
       share: string;

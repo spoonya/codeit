@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { themeDark } from '../../../constants/theme.constant';
 
 export const Container = styled.div`
   position: relative;
@@ -22,6 +23,7 @@ export const Header = styled.div`
 export const Title = styled.p``;
 
 export const Content = styled.div`
-  height: calc(100% - 30px);
+  background-color: ${themeDark.background.secondary};
+  height: calc(100% - 25px);
   overflow-y: auto;
 `;

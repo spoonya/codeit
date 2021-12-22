@@ -8,7 +8,7 @@ import useTypedSelector from './hooks/use-typed-selector.hook';
 import Project from './pages/Project.page';
 import { settings } from './constants/sidebar-tabs/settings.constant';
 
-export default function App(): JSX.Element {
+export default function App() {
   const { themeMode } = useTypedSelector((store) => store.theme);
 
   return (

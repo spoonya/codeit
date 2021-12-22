@@ -14,13 +14,12 @@ interface CodeEditorProps {
   langLabel: string;
 }
 
-let editorRef: MutableRefObject<any> | null = null;
 export const editorRefArray: Array<MutableRefObject<any>> = [];
 
 export default function CodeEditor(props: CodeEditorProps) {
   const { language, langLabel, code, onChanged } = props;
 
-  editorRef = React.useRef(null);
+  const editorRef: MutableRefObject<any> = React.useRef(null);
 
   const handleEditorWillMount = (monaco: Monaco) => {
     monaco.editor.defineTheme(settings.theme.dark, {
@@ -54,8 +53,8 @@ export default function CodeEditor(props: CodeEditorProps) {
     emmetHTML(monaco);
     emmetCSS(monaco);
 
-    editorRef!.current = editor;
-    editorRefArray.push(editorRef!.current);
+    editorRef.current = editor;
+    editorRefArray.push(editorRef.current);
   };
 
   const handleChange = (value: string | undefined) => {

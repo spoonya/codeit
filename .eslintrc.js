@@ -20,6 +20,7 @@ module.exports = {
     'operator-linebreak': 'off',
     'function-paren-newline': 'off',
     'react/prop-types': 'off',
+    'react/destructuring-assignment': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',

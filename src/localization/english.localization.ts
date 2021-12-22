@@ -1,6 +1,9 @@
 import Localization from './types/localization.type';
 
 const english: Localization = {
+  header: {
+    signIn: 'Sign In',
+  },
   tooltips: {
     sidebar: {
       share: 'Share',

@@ -1,6 +1,9 @@
 import Localization from './types/localization.type';
 
 const russian: Localization = {
+  header: {
+    signIn: 'Войти',
+  },
   tooltips: {
     sidebar: {
       share: 'Поделиться',

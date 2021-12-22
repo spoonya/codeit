@@ -15,9 +15,6 @@ i18n.init({
     formatSeparator: ',',
   },
   returnObjects: true,
-  react: {
-    wait: true,
-  },
   resources: {
     en: {
       translations: {

@@ -1,11 +1,13 @@
 import React from 'react';
 
+import { getStorage, setStorage } from '../helpers/storage.helper';
+
 export default function useStorage(
   storageName: string,
   defaultVal: string,
 ): [string, React.Dispatch<any>] {
   const [value, setValue] = React.useState(() => {
-    const projectJson = localStorage.getItem(storageName);
+    const projectJson = getStorage(storageName);
 
     if (projectJson !== null) return JSON.parse(projectJson);
 
@@ -13,7 +15,7 @@ export default function useStorage(
   });
 
   React.useEffect(() => {
-    localStorage.setItem(storageName, JSON.stringify(value));
+    setStorage(storageName, JSON.stringify(value));
   }, [storageName, value]);
 
   return [value, setValue];
