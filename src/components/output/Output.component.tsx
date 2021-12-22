@@ -2,6 +2,19 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { Hook, Decode } from 'console-feed';
 
+import { Message } from 'console-feed/lib/definitions/Component';
+import { SetLogsAction } from '../../store/reducers/logs/logs.type';
+
+interface OutputProps {
+  srcDoc: string;
+  setLogs: (val: Message[]) => SetLogsAction;
+}
+
+interface OutputState {
+  logs: any[];
+  contentRef: React.RefObject<any> | null;
+}
+
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -14,8 +27,8 @@ const Iframe = styled.iframe`
   border: 0;
 `;
 
-export default class Output extends React.Component {
-  constructor(props) {
+export default class Output extends React.Component<OutputProps, OutputState> {
+  constructor(props: OutputProps) {
     super(props);
 
     this.state = {
@@ -34,7 +47,7 @@ export default class Output extends React.Component {
           referrerPolicy="origin"
           ref={this.state.contentRef}
           onLoad={() => {
-            Hook(this.state.contentRef.current.contentWindow.console, (log) => {
+            Hook(this.state.contentRef!.current!.contentWindow!.console, (log) => {
               this.setState(({ logs }) => ({ logs: [...logs, Decode(log)] }));
               this.props.setLogs(this.state.logs);
             });
