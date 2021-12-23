@@ -4,10 +4,10 @@ import { SplitPane } from 'react-multi-split-pane';
 import Container from '../components/container/Container.component';
 import CodeEditor from '../components/editor/Editor.component';
 import Output from '../components/output/Output.component';
-import project from '../constants/project.constant';
 import ConsoleContainer from '../containers/Console.container';
 import HeaderContainer from '../containers/Header.container';
 import SidebarContainer from '../containers/sidebar/Sidebar.container';
+import project from '../constants/project.constant';
 import useActions from '../hooks/use-actions.hook';
 import useStorage from '../hooks/use-storage.hook';
 
@@ -49,7 +49,7 @@ export default function Project() {
       <Container>
         <SidebarContainer />
         <Container.Inner>
-          <SplitPane split="horizontal" defaultSizes={[65, 20, 25]} minSize={[28, 20, 25]}>
+          <SplitPane split="horizontal" defaultSizes={[65, 20, 25]} minSize={[28, 20, 27]}>
             <div>
               <SplitPane split="vertical" minSize={52}>
                 <CodeEditor language="html" code={html} onChanged={setHTML} langLabel="html" />

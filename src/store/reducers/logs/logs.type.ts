@@ -2,6 +2,7 @@ import { Message } from 'console-feed/lib/definitions/Component';
 
 export enum LogsActionTypes {
   SET_LOGS = 'SET_LOGS',
+  RESET_LOGS = 'RESET_LOGS',
 }
 
 export interface LogsState {
@@ -13,4 +14,9 @@ export interface SetLogsAction {
   payload: Message[];
 }
 
-export type LogsAction = SetLogsAction;
+export interface ResetLogsAction {
+  type: LogsActionTypes.RESET_LOGS;
+  payload: Message[];
+}
+
+export type LogsAction = SetLogsAction | ResetLogsAction;

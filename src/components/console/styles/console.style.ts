@@ -27,3 +27,19 @@ export const Content = styled.div`
   height: calc(100% - 25px);
   overflow-y: auto;
 `;
+
+export const Clear = styled.button`
+  background-color: ${({ theme }) => theme.background.secondary};
+  color: ${({ theme }) => theme.text.primary};
+  font-size: 14px;
+
+  padding: 2px 5px;
+
+  border-radius: 3px;
+
+  transition: background-color 0.1s linear;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.brand.primary};
+  }
+`;

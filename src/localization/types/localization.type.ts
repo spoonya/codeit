@@ -40,5 +40,6 @@ export default interface Localization {
   };
   console: {
     title: string;
+    clear: string;
   };
 }

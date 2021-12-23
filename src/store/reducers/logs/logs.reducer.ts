@@ -9,6 +9,12 @@ const logs = (state = initialState, action: LogsAction): LogsState => {
     case LogsActionTypes.SET_LOGS:
       return {
         ...state,
+        consoleLogs: [...state.consoleLogs, ...action.payload],
+      };
+
+    case LogsActionTypes.RESET_LOGS:
+      return {
+        ...state,
         consoleLogs: action.payload,
       };
 

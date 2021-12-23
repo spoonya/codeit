@@ -42,6 +42,7 @@ const english: Localization = {
   },
   console: {
     title: 'Console',
+    clear: 'Clear',
   },
 };
 

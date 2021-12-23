@@ -1,9 +1,15 @@
 import React from 'react';
+import { LogsAction } from '../../store/reducers/logs/logs.type';
 
-import { Container, Content, Header, Title } from './styles/console.style';
+import { Clear, Container, Content, Header, Title } from './styles/console.style';
 
 interface TInner {
-  children?: React.ReactNode;
+  children: React.ReactNode;
+}
+
+interface TClear {
+  children: React.ReactNode;
+  onClick: () => LogsAction;
 }
 
 export default function Console(props: TInner) {
@@ -28,4 +34,10 @@ Console.Title = function ConsoleTitle(props: TInner) {
   const { children } = props;
 
   return <Title>{children}</Title>;
+};
+
+Console.Clear = function ConsoleClear(props: TClear) {
+  const { children, onClick } = props;
+
+  return <Clear onClick={onClick}>{children}</Clear>;
 };

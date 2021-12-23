@@ -42,6 +42,7 @@ const russian: Localization = {
   },
   console: {
     title: 'Консоль',
+    clear: 'Очистить',
   },
 };
 

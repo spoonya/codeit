@@ -2,16 +2,14 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { Hook, Decode } from 'console-feed';
 
-import { Message } from 'console-feed/lib/definitions/Component';
-import { SetLogsAction } from '../../store/reducers/logs/logs.type';
+import { LogsAction } from '../../store/reducers/logs/logs.type';
 
 interface OutputProps {
   srcDoc: string;
-  setLogs: (val: Message[]) => SetLogsAction;
+  setLogs: (val: any[]) => LogsAction;
 }
 
 interface OutputState {
-  logs: any[];
   contentRef: React.RefObject<any> | null;
 }
 
@@ -32,7 +30,6 @@ export default class Output extends React.Component<OutputProps, OutputState> {
     super(props);
 
     this.state = {
-      logs: [],
       contentRef: React.createRef(),
     };
   }
@@ -48,8 +45,7 @@ export default class Output extends React.Component<OutputProps, OutputState> {
           ref={this.state.contentRef}
           onLoad={() => {
             Hook(this.state.contentRef!.current!.contentWindow!.console, (log) => {
-              this.setState(({ logs }) => ({ logs: [...logs, Decode(log)] }));
-              this.props.setLogs(this.state.logs);
+              this.props.setLogs([Decode(log)]);
             });
           }}
         />
