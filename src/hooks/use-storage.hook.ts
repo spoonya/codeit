@@ -9,7 +9,7 @@ export default function useStorage(
   const [value, setValue] = React.useState(() => {
     const projectJson = getStorage(storageName);
 
-    if (projectJson !== null) return JSON.parse(projectJson);
+    if (projectJson !== '') return JSON.parse(projectJson);
 
     return defaultVal;
   });

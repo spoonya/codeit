@@ -40,7 +40,7 @@ export default class Output extends React.Component<OutputProps, OutputState> {
         <Iframe
           srcDoc={this.props.srcDoc}
           title="output"
-          sandbox="allow-modals allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts"
+          sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
           referrerPolicy="origin"
           ref={this.state.contentRef}
           onLoad={() => {
