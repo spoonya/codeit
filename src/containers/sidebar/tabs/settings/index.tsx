@@ -5,6 +5,7 @@ import Sidebar from '../../../../components/sidebar/Sidebar.component';
 import FontSizeSetting from './Font-size.container';
 import IndentSizeSetting from './Indent-size.container';
 import LocalizationSetting from './Localization.container';
+import LayoutSetting from './Layout.container';
 import ThemeSetting from './Theme.container';
 import { Tab } from '../../../../components/sidebar/types/sidebar.type';
 
@@ -21,6 +22,7 @@ export default function SettingsTab(props: Tab) {
           <Sidebar.TabListName>{t('sidebar.settings.general.title')}</Sidebar.TabListName>
           <Sidebar.TabSubList>
             <ThemeSetting />
+            <LayoutSetting />
             <LocalizationSetting />
           </Sidebar.TabSubList>
         </Sidebar.TabListItem>

@@ -22,12 +22,19 @@ const english: Localization = {
         title: 'General',
         lightTheme: 'Light theme',
         language: 'Language',
+        layout: {
+          title: 'Layout',
+          values: {
+            vertical: 'vertically',
+            horizontal: 'horizontally',
+          },
+        },
       },
       editor: {
         title: 'Editor',
         fontSize: {
           title: 'Font size',
-          variants: {
+          values: {
             small: 'small',
             normal: 'normal',
             large: 'large',

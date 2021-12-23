@@ -31,16 +31,16 @@ export default function FontSizeSetting() {
           <InputLabel shrink>{t('sidebar.settings.editor.fontSize.title')}</InputLabel>
           <Select value={fontSize.toString()} onChange={handleChange}>
             <MenuItemStyled value={settings.fontSize.values.small}>
-              {t('sidebar.settings.editor.fontSize.variants.small')}
+              {t('sidebar.settings.editor.fontSize.values.small')}
             </MenuItemStyled>
             <MenuItemStyled value={settings.fontSize.values.normal}>
-              {t('sidebar.settings.editor.fontSize.variants.normal')}
+              {t('sidebar.settings.editor.fontSize.values.normal')}
             </MenuItemStyled>
             <MenuItemStyled value={settings.fontSize.values.large}>
-              {t('sidebar.settings.editor.fontSize.variants.large')}
+              {t('sidebar.settings.editor.fontSize.values.large')}
             </MenuItemStyled>
             <MenuItemStyled value={settings.fontSize.values.huge}>
-              {t('sidebar.settings.editor.fontSize.variants.huge')}
+              {t('sidebar.settings.editor.fontSize.values.huge')}
             </MenuItemStyled>
           </Select>
         </FormControl>

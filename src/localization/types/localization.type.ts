@@ -20,12 +20,19 @@ export default interface Localization {
         title: string;
         lightTheme: string;
         language: string;
+        layout: {
+          title: string;
+          values: {
+            vertical: string;
+            horizontal: string;
+          };
+        };
       };
       editor: {
         title: string;
         fontSize: {
           title: string;
-          variants: {
+          values: {
             small: string;
             normal: string;
             large: string;

@@ -3,7 +3,7 @@ import { getStorage } from '../../../helpers/storage.helper';
 import { ThemeState, ThemeAction, ThemeActionTypes } from './theme.type';
 
 const initialState: ThemeState = {
-  themeMode: getStorage(settings.theme.storage) || settings.theme.dark,
+  themeMode: getStorage(settings.theme.storage) || settings.theme.defaultValue,
 };
 
 const theme = (state = initialState, action: ThemeAction): ThemeState => {

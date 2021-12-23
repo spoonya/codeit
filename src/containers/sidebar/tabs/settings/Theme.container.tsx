@@ -17,7 +17,7 @@ export default function ThemeSetting() {
       <Sidebar.TabSwitch
         label={t('sidebar.settings.general.lightTheme')}
         onChange={() => toggleTheme(themeMode)}
-        checked={themeMode === settings.theme.light}
+        checked={themeMode === settings.theme.values.light}
       />
     </Sidebar.TabSubListItem>
   );

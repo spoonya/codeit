@@ -15,22 +15,22 @@ const setTheme = (theme: string): ThemeAction => ({
 
 const toggleEditorTheme = (theme: string) => {
   loader.init().then((monaco) => {
-    if (theme === settings.theme.light) {
-      monaco.editor.setTheme(settings.theme.light);
+    if (theme === settings.theme.values.light) {
+      monaco.editor.setTheme(settings.theme.values.light);
     } else {
-      monaco.editor.setTheme(settings.theme.dark);
+      monaco.editor.setTheme(settings.theme.values.dark);
     }
   });
 };
 
 export const toggleTheme = (theme: string) => (dispatch: Dispatch<ThemeAction>) => {
-  if (theme === settings.theme.light) {
-    dispatch(setTheme(settings.theme.dark));
-    toggleEditorTheme(settings.theme.dark);
-    setLocalStorage(settings.theme.dark);
+  if (theme === settings.theme.values.light) {
+    dispatch(setTheme(settings.theme.values.dark));
+    toggleEditorTheme(settings.theme.values.dark);
+    setLocalStorage(settings.theme.values.dark);
   } else {
-    dispatch(setTheme(settings.theme.light));
-    toggleEditorTheme(settings.theme.light);
-    setLocalStorage(settings.theme.light);
+    dispatch(setTheme(settings.theme.values.light));
+    toggleEditorTheme(settings.theme.values.light);
+    setLocalStorage(settings.theme.values.light);
   }
 };

@@ -10,6 +10,8 @@ import SidebarContainer from '../containers/sidebar/Sidebar.container';
 import project from '../constants/project.constant';
 import useActions from '../hooks/use-actions.hook';
 import useStorage from '../hooks/use-storage.hook';
+import useTypedSelector from '../hooks/use-typed-selector.hook';
+import { settings } from '../constants/sidebar-tabs/settings.constant';
 
 export default function Project() {
   const [html, setHTML] = useStorage(project.html.storage, '');
@@ -18,6 +20,7 @@ export default function Project() {
   const [srcDoc, setSrcDoc] = React.useState('');
 
   const { setLogs } = useActions();
+  const { layoutType } = useTypedSelector((store) => store.layout);
 
   const delay = 1000;
 
@@ -48,19 +51,33 @@ export default function Project() {
       <HeaderContainer />
       <Container>
         <SidebarContainer />
-        <Container.Inner>
-          <SplitPane split="horizontal" defaultSizes={[65, 20, 25]} minSize={[28, 20, 27]}>
-            <div>
-              <SplitPane split="vertical" minSize={52}>
+        {layoutType === settings.layout.values.horizontal ? (
+          <Container.Inner>
+            <SplitPane split="horizontal" defaultSizes={[65, 20, 25]} minSize={[28, 20, 27]}>
+              <SplitPane split="vertical" minSize={25}>
                 <CodeEditor language="html" code={html} onChanged={setHTML} langLabel="html" />
                 <CodeEditor language="css" code={css} onChanged={setCSS} langLabel="css" />
                 <CodeEditor language="javascript" code={js} onChanged={setJS} langLabel="js" />
               </SplitPane>
-            </div>
-            <Output srcDoc={srcDoc} setLogs={setLogs} />
-            <ConsoleContainer />
-          </SplitPane>
-        </Container.Inner>
+              <Output srcDoc={srcDoc} setLogs={setLogs} />
+              <ConsoleContainer />
+            </SplitPane>
+          </Container.Inner>
+        ) : (
+          <Container.Inner>
+            <SplitPane split="vertical" defaultSizes={[65, 45]} minSize={[25, 195]}>
+              <SplitPane split="horizontal" minSize={25}>
+                <CodeEditor language="html" code={html} onChanged={setHTML} langLabel="html" />
+                <CodeEditor language="css" code={css} onChanged={setCSS} langLabel="css" />
+                <CodeEditor language="javascript" code={js} onChanged={setJS} langLabel="js" />
+              </SplitPane>
+              <SplitPane split="horizontal" defaultSizes={[65, 45]} minSize={[25, 27]}>
+                <Output srcDoc={srcDoc} setLogs={setLogs} />
+                <ConsoleContainer />
+              </SplitPane>
+            </SplitPane>
+          </Container.Inner>
+        )}
       </Container>
     </>
   );

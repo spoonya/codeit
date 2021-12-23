@@ -1,7 +1,18 @@
 interface Settings {
   theme: {
-    light: string;
-    dark: string;
+    defaultValue: string;
+    values: {
+      light: string;
+      dark: string;
+    };
+    storage: string;
+  };
+  layout: {
+    defaultValue: string;
+    values: {
+      horizontal: string;
+      vertical: string;
+    };
     storage: string;
   };
   indentSize: {
@@ -34,9 +45,20 @@ interface Settings {
 
 export const settings: Settings = {
   theme: {
-    light: 'light',
-    dark: 'dark',
+    defaultValue: 'dark',
+    values: {
+      light: 'light',
+      dark: 'dark',
+    },
     storage: 'codeit-theme',
+  },
+  layout: {
+    defaultValue: 'horizontal',
+    values: {
+      horizontal: 'horizontal',
+      vertical: 'vertical',
+    },
+    storage: 'codeit-layout',
   },
   indentSize: {
     defaultValue: 2,

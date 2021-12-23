@@ -22,12 +22,19 @@ const russian: Localization = {
         title: 'Общие',
         lightTheme: 'Светлая тема',
         language: 'Язык',
+        layout: {
+          title: 'Вид окон',
+          values: {
+            vertical: 'вертикально',
+            horizontal: 'горизонтально',
+          },
+        },
       },
       editor: {
         title: 'Редактор',
         fontSize: {
           title: 'Размер шрифта',
-          variants: {
+          values: {
             small: 'маленький',
             normal: 'нормальный',
             large: 'большой',

@@ -22,7 +22,7 @@ export default function CodeEditor(props: CodeEditorProps) {
   const editorRef: MutableRefObject<any> = React.useRef(null);
 
   const handleEditorWillMount = (monaco: Monaco) => {
-    monaco.editor.defineTheme(settings.theme.dark, {
+    monaco.editor.defineTheme(settings.theme.values.dark, {
       base: 'vs-dark',
       inherit: true,
       rules: [],
@@ -34,7 +34,7 @@ export default function CodeEditor(props: CodeEditorProps) {
       },
     });
 
-    monaco.editor.defineTheme(settings.theme.light, {
+    monaco.editor.defineTheme(settings.theme.values.light, {
       base: 'vs',
       inherit: true,
       rules: [],
@@ -73,9 +73,9 @@ export default function CodeEditor(props: CodeEditorProps) {
         beforeMount={handleEditorWillMount}
         onMount={handleEditorDidMount}
         theme={
-          getStorage(settings.theme.storage) === settings.theme.light
-            ? settings.theme.light
-            : settings.theme.dark
+          getStorage(settings.theme.storage) === settings.theme.values.light
+            ? settings.theme.values.light
+            : settings.theme.values.dark
         }
         options={{
           minimap: {

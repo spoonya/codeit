@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <ThemeProviderMUI theme={themeMUI}>
-      <ThemeProvider theme={themeMode === settings.theme.light ? themeLight : themeDark}>
+      <ThemeProvider theme={themeMode === settings.theme.values.light ? themeLight : themeDark}>
         <GlobalStyle />
         <Project />
       </ThemeProvider>
