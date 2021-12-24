@@ -12,9 +12,10 @@ const english: Localization = {
   },
   sidebar: {
     share: {
-      title: 'Share',
+      title: 'Share project',
       label: 'Shareable Link',
       button: 'Copy link',
+      alert: 'Link copied!',
     },
     settings: {
       title: 'Settings',

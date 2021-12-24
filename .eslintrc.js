@@ -30,6 +30,7 @@ module.exports = {
     'no-unused-expressions': 'warn',
     'no-nested-ternary': 'off',
     'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'react/require-default-props': 'off',
     '@typescript-eslint/default-param-last': 'off',
     'global-require': 'off',

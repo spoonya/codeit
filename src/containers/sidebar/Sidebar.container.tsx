@@ -1,11 +1,14 @@
 import React from 'react';
-import { Settings, Share } from '@mui/icons-material';
+import { Settings } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 
 import Sidebar from '../../components/sidebar/Sidebar.component';
+import Tooltip from '../../components/tooltip/Tooltip.component';
 import sidebarTabs from '../../constants/sidebar-tabs/tabs.constant';
 import SettingsTab from './tabs/settings';
 
 export default function SidebarContainer() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = React.useState('');
 
   const toggleTab = (tabName: string): void => {
@@ -20,13 +23,15 @@ export default function SidebarContainer() {
     <Sidebar>
       <Sidebar.Menu>
         <Sidebar.MenuItem>
-          <Share style={{ fontSize: 30 }} />
+          <Sidebar.ShareLink />
         </Sidebar.MenuItem>
         <Sidebar.MenuItem
           isActive={activeTab === sidebarTabs.settings}
           onClick={() => toggleTab(sidebarTabs.settings)}
         >
-          <Settings style={{ fontSize: 30 }} />
+          <Tooltip title={t('tooltips.sidebar.settings')}>
+            <Settings style={{ fontSize: 30 }} />
+          </Tooltip>
         </Sidebar.MenuItem>
       </Sidebar.Menu>
 

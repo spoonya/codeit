@@ -13,6 +13,7 @@ export default interface Localization {
       title: string;
       label: string;
       button: string;
+      alert: string;
     };
     settings: {
       title: string;

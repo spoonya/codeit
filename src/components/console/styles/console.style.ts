@@ -37,9 +37,10 @@ export const Clear = styled.button`
 
   border-radius: 3px;
 
-  transition: background-color 0.1s linear;
+  transition: color 0.1s linear, background-color 0.1s linear;
 
   &:hover {
     background-color: ${({ theme }) => theme.brand.primary};
+    color: ${({ theme }) => theme.white.primary};
   }
 `;

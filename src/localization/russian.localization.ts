@@ -12,9 +12,10 @@ const russian: Localization = {
   },
   sidebar: {
     share: {
-      title: 'Поделиться ссылкой',
+      title: 'Поделиться проектом',
       label: 'Ссылка общего доступа',
       button: 'Копировать',
+      alert: 'Ссылка скопирована!',
     },
     settings: {
       title: 'Настройки',

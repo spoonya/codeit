@@ -18,3 +18,9 @@ export interface Switch {
   checked: boolean;
   onChange: () => void;
 }
+
+export interface DialogTitles {
+  id: string;
+  children?: React.ReactNode;
+  onClose: () => void;
+}
