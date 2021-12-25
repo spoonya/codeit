@@ -15,7 +15,11 @@ export function HeaderContainer(props: HeaderProps) {
   const { t } = useTranslation();
 
   const handleClick = () => {
-    setSrcDoc(srcDoc);
+    setSrcDoc('');
+
+    setTimeout(() => {
+      setSrcDoc(srcDoc);
+    }, 1000);
   };
 
   return (
