@@ -1,5 +1,5 @@
-import { settings } from '../../../constants/sidebar-tabs/settings.constant';
-import { getStorage } from '../../../helpers/storage.helper';
+import { settings } from '../../../constants';
+import { getStorage } from '../../../helpers';
 import { LayoutState, LayoutAction, LayoutActionTypes } from './layout.type';
 
 const initialState: LayoutState = {

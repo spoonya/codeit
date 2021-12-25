@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 
 import ActionCreators from '../store/actions';
 
-export default function useActions() {
+export function useActions() {
   const dispatch = useDispatch();
 
   return bindActionCreators(ActionCreators, dispatch);

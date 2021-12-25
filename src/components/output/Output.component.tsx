@@ -25,7 +25,7 @@ const Iframe = styled.iframe`
   border: 0;
 `;
 
-export default class Output extends React.Component<OutputProps, OutputState> {
+export class Output extends React.Component<OutputProps, OutputState> {
   constructor(props: OutputProps) {
     super(props);
 

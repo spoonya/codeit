@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Header from '../components/header/Header.component';
+import { Header } from '../components';
 
 interface HeaderProps {
   srcDoc: string;
@@ -9,7 +9,7 @@ interface HeaderProps {
   setSrcDoc: (value: string) => void;
 }
 
-export default function HeaderContainer(props: HeaderProps) {
+export function HeaderContainer(props: HeaderProps) {
   const { srcDoc, setSrcDoc, isRunDisabled } = props;
 
   const { t } = useTranslation();

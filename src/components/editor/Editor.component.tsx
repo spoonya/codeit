@@ -2,10 +2,9 @@ import Editor, { Monaco } from '@monaco-editor/react';
 import React, { MutableRefObject } from 'react';
 import { emmetCSS, emmetHTML } from 'emmet-monaco-es';
 
-import { themeDark, themeLight } from '../../constants/theme.constant';
+import { themeDark, themeLight, settings } from '../../constants';
 import { EditorWrapper, EditorHeader, EditorLang } from './styles/editor.style';
-import { settings } from '../../constants/sidebar-tabs/settings.constant';
-import { getStorage } from '../../helpers/storage.helper';
+import { getStorage } from '../../helpers';
 
 interface CodeEditorProps {
   language: string;
@@ -16,7 +15,7 @@ interface CodeEditorProps {
 
 export const editorRefArray: Array<MutableRefObject<any>> = [];
 
-export default function CodeEditor(props: CodeEditorProps) {
+export function CodeEditor(props: CodeEditorProps) {
   const { language, langLabel, code, onChanged } = props;
 
   const editorRef: MutableRefObject<any> = React.useRef(null);

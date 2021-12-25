@@ -1,12 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Sidebar from '../../../../components/sidebar/Sidebar.component';
-import { settings } from '../../../../constants/sidebar-tabs/settings.constant';
-import useActions from '../../../../hooks/use-actions.hook';
-import useTypedSelector from '../../../../hooks/use-typed-selector.hook';
+import { Sidebar } from '../../../../../components';
+import { settings } from '../../../../../constants';
+import { useActions, useTypedSelector } from '../../../../../hooks';
 
-export default function LiveModeSetting() {
+export function LiveModeSetting() {
   const { liveMode } = useTypedSelector((store) => store.liveMode);
   const { toggleLiveMode } = useActions();
 

@@ -2,12 +2,11 @@ import React from 'react';
 import { Settings } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 
-import Sidebar from '../../components/sidebar/Sidebar.component';
-import Tooltip from '../../components/tooltip/Tooltip.component';
-import sidebarTabs from '../../constants/sidebar-tabs/tabs.constant';
-import SettingsTab from './tabs/settings';
+import { sidebarTabs } from '../../constants';
+import { SettingsTab } from './tabs';
+import { Sidebar, Tooltip } from '../../components';
 
-export default function SidebarContainer() {
+export function SidebarContainer() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = React.useState('');
 

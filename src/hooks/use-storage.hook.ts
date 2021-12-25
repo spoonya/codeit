@@ -1,11 +1,8 @@
 import React from 'react';
 
-import { getStorage, setStorage } from '../helpers/storage.helper';
+import { getStorage, setStorage } from '../helpers';
 
-export default function useStorage(
-  storageName: string,
-  defaultVal: string,
-): [string, React.Dispatch<any>] {
+export function useStorage(storageName: string, defaultVal: string): [string, React.Dispatch<any>] {
   const [value, setValue] = React.useState(() => {
     const projectJson = getStorage(storageName);
 

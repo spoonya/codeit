@@ -1,16 +1,18 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Sidebar from '../../../../components/sidebar/Sidebar.component';
-import FontSizeSetting from './Font-size.container';
-import IndentSizeSetting from './Indent-size.container';
-import LocalizationSetting from './Localization.container';
-import LayoutSetting from './Layout.container';
-import ThemeSetting from './Theme.container';
-import { Tab } from '../../../../components/sidebar/types/sidebar.type';
-import LiveModeSetting from './Live-mode.container';
+import { Sidebar } from '../../../../components';
+import { TabProps } from '../../../../components/sidebar/types/sidebar.type';
+import {
+  ThemeSetting,
+  LayoutSetting,
+  LocalizationSetting,
+  LiveModeSetting,
+  FontSizeSetting,
+  IndentSizeSetting,
+} from './components';
 
-export default function SettingsTab(props: Tab) {
+export function SettingsTab(props: TabProps) {
   const { isActive } = props;
 
   const { t } = useTranslation();

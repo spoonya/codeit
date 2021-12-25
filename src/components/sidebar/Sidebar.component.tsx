@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Alert,
   Button,
@@ -14,10 +15,8 @@ import {
 } from '@mui/material';
 import { Share, Close, Check } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
-import React from 'react';
 
-import Tooltip from '../tooltip/Tooltip.component';
-
+import { Tooltip } from '../tooltip/Tooltip.component';
 import {
   Container,
   Menu,
@@ -35,19 +34,19 @@ import {
 } from './styles/sidebar.style';
 import * as TSidebar from './types/sidebar.type';
 
-export default function Sidebar(props: TSidebar.Inner) {
+export function Sidebar(props: TSidebar.InnerProps) {
   const { children } = props;
 
   return <Container>{children}</Container>;
 }
 
-Sidebar.Menu = function SidebarMenu(props: TSidebar.Inner) {
+Sidebar.Menu = function SidebarMenu(props: TSidebar.InnerProps) {
   const { children } = props;
 
   return <Menu>{children}</Menu>;
 };
 
-Sidebar.MenuItem = function SidebarMenuItem(props: TSidebar.Item) {
+Sidebar.MenuItem = function SidebarMenuItem(props: TSidebar.ItemProps) {
   const { isActive, onClick, children } = props;
 
   return (
@@ -57,13 +56,13 @@ Sidebar.MenuItem = function SidebarMenuItem(props: TSidebar.Item) {
   );
 };
 
-Sidebar.Tab = function SidebarTab(props: TSidebar.Tab) {
+Sidebar.Tab = function SidebarTab(props: TSidebar.TabProps) {
   const { children, isActive } = props;
 
   return <Tab isActive={isActive}>{children}</Tab>;
 };
 
-Sidebar.TabHeader = function SidebarTabHeader(props: TSidebar.Inner) {
+Sidebar.TabHeader = function SidebarTabHeader(props: TSidebar.InnerProps) {
   const { children } = props;
 
   return (
@@ -73,37 +72,37 @@ Sidebar.TabHeader = function SidebarTabHeader(props: TSidebar.Inner) {
   );
 };
 
-Sidebar.TabList = function SidebarTabList(props: TSidebar.Inner) {
+Sidebar.TabList = function SidebarTabList(props: TSidebar.InnerProps) {
   const { children } = props;
 
   return <TabList>{children}</TabList>;
 };
 
-Sidebar.TabSubList = function SidebarTabSubList(props: TSidebar.Inner) {
+Sidebar.TabSubList = function SidebarTabSubList(props: TSidebar.InnerProps) {
   const { children } = props;
 
   return <TabSubList>{children}</TabSubList>;
 };
 
-Sidebar.TabListItem = function SidebarTabListItem(props: TSidebar.Inner) {
+Sidebar.TabListItem = function SidebarTabListItem(props: TSidebar.InnerProps) {
   const { children } = props;
 
   return <TabListItem>{children}</TabListItem>;
 };
 
-Sidebar.TabSubListItem = function SidebarTabSubListItem(props: TSidebar.Inner) {
+Sidebar.TabSubListItem = function SidebarTabSubListItem(props: TSidebar.InnerProps) {
   const { children } = props;
 
   return <TabSubListItem>{children}</TabSubListItem>;
 };
 
-Sidebar.TabListName = function SidebarTabListName(props: TSidebar.Inner) {
+Sidebar.TabListName = function SidebarTabListName(props: TSidebar.InnerProps) {
   const { children } = props;
 
   return <TabListName>{children}</TabListName>;
 };
 
-Sidebar.TabSwitch = function SidebarTabSwitch(props: TSidebar.Switch) {
+Sidebar.TabSwitch = function SidebarTabSwitch(props: TSidebar.SwitchProps) {
   const { label, onChange, checked } = props;
 
   return (
@@ -118,13 +117,13 @@ Sidebar.TabSwitch = function SidebarTabSwitch(props: TSidebar.Switch) {
   );
 };
 
-Sidebar.TabSelect = function SidebarTabSelect(props: TSidebar.Inner) {
+Sidebar.TabSelect = function SidebarTabSelect(props: TSidebar.InnerProps) {
   const { children } = props;
 
   return <TabSelect>{children}</TabSelect>;
 };
 
-function DialogTitleStyled(props: TSidebar.DialogTitles) {
+function DialogTitleStyled(props: TSidebar.DialogTitlesProps) {
   const { children, onClose } = props;
 
   return (

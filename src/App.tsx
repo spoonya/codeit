@@ -4,9 +4,9 @@ import { ThemeProvider as ThemeProviderMUI } from '@mui/material/styles';
 
 import GlobalStyle from './global-style';
 import { themeDark, themeLight, themeMUI } from './constants/theme.constant';
-import useTypedSelector from './hooks/use-typed-selector.hook';
-import Project from './pages/Project.page';
-import { settings } from './constants/sidebar-tabs/settings.constant';
+import { useTypedSelector } from './hooks';
+import { Project } from './pages';
+import { settings } from './constants';
 
 export default function App() {
   const { themeMode } = useTypedSelector((store) => store.theme);

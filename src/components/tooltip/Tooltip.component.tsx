@@ -3,7 +3,7 @@ import React from 'react';
 import TooltipMui, { tooltipClasses, TooltipProps } from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
 
-interface TInner {
+interface InnerProps {
   children: React.ReactElement<any, any>;
   title: string;
 }
@@ -17,7 +17,7 @@ const TooltipStyled = styled(({ className, ...props }: TooltipProps) => (
   },
 }));
 
-export default function Tooltip(props: TInner) {
+export function Tooltip(props: InnerProps) {
   const { children, title } = props;
 
   return (

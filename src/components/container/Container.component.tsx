@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-interface TInner {
+interface InnerProps {
   children: React.ReactNode;
 }
 
@@ -18,13 +18,13 @@ const Inner = styled.div`
   height: 100%;
 `;
 
-export default function Container(props: TInner) {
+export function Container(props: InnerProps) {
   const { children } = props;
 
   return <Wrapper>{children}</Wrapper>;
 }
 
-Container.Inner = function ContainerInner(props: TInner) {
+Container.Inner = function ContainerInner(props: InnerProps) {
   const { children } = props;
 
   return <Inner>{children}</Inner>;

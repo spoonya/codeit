@@ -2,8 +2,6 @@ export interface SidebarTabs {
   settings: string;
 }
 
-const sidebarTabs: SidebarTabs = {
+export const sidebarTabs: SidebarTabs = {
   settings: 'settings',
 };
-
-export default sidebarTabs;

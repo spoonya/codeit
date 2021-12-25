@@ -1,6 +1,6 @@
 import i18n from 'i18next';
 
-import { settings } from '../constants/sidebar-tabs/settings.constant';
+import { settings } from '../constants';
 import { getStorage } from '../helpers/storage.helper';
 import english from './english.localization';
 import russian from './russian.localization';

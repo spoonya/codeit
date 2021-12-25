@@ -3,17 +3,17 @@ import React from 'react';
 
 import { Container, Group, Inner, Logo, ProjectTitle, SignIn, Run } from './styles/header.style';
 
-interface TInner {
+interface InnerProps {
   children: React.ReactNode;
 }
 
-interface TRun {
+interface RunProps {
   btnLabel: string;
   disabled: boolean;
   onClick: () => void;
 }
 
-export default function Header(props: TInner) {
+export function Header(props: InnerProps) {
   const { children } = props;
 
   return (
@@ -23,7 +23,7 @@ export default function Header(props: TInner) {
   );
 }
 
-Header.Group = function HeaderGroup(props: TInner) {
+Header.Group = function HeaderGroup(props: InnerProps) {
   const { children } = props;
 
   return <Group>{children}</Group>;
@@ -38,19 +38,19 @@ Header.Logo = function HeaderLogo() {
   );
 };
 
-Header.ProjectTitle = function HeaderProjectTitle(props: TInner) {
+Header.ProjectTitle = function HeaderProjectTitle(props: InnerProps) {
   const { children } = props;
 
   return <ProjectTitle>{children}</ProjectTitle>;
 };
 
-Header.SignIn = function HeaderSignIn(props: TInner) {
+Header.SignIn = function HeaderSignIn(props: InnerProps) {
   const { children } = props;
 
   return <SignIn>{children}</SignIn>;
 };
 
-Header.Run = function HeaderRun(props: TRun) {
+Header.Run = function HeaderRun(props: RunProps) {
   const { btnLabel, onClick, disabled } = props;
 
   return (

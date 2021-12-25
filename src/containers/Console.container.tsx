@@ -1,13 +1,11 @@
 import React from 'react';
 import { Console as ConsoleFeed } from 'console-feed';
-
 import { useTranslation } from 'react-i18next';
 
-import Console from '../components/console/Console.component';
-import useTypedSelector from '../hooks/use-typed-selector.hook';
-import useActions from '../hooks/use-actions.hook';
+import { Console } from '../components';
+import { useActions, useTypedSelector } from '../hooks';
 
-export default function ConsoleContainer() {
+export function ConsoleContainer() {
   const { consoleLogs } = useTypedSelector((store) => store.logs);
   const { resetLogs } = useActions();
 

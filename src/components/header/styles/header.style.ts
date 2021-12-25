@@ -72,4 +72,8 @@ export const Run = styledMui(Button)({
   '&:focus': {
     boxShadow: 'none',
   },
+  '&:disabled': {
+    backgroundColor: '#157938',
+    color: '#bdbdbd',
+  },
 });

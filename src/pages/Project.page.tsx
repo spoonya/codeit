@@ -1,19 +1,12 @@
 import React from 'react';
 import { SplitPane } from 'react-multi-split-pane';
 
-import Container from '../components/container/Container.component';
-import CodeEditor from '../components/editor/Editor.component';
-import Output from '../components/output/Output.component';
-import ConsoleContainer from '../containers/Console.container';
-import HeaderContainer from '../containers/Header.container';
-import SidebarContainer from '../containers/sidebar/Sidebar.container';
-import useActions from '../hooks/use-actions.hook';
-import useStorage from '../hooks/use-storage.hook';
-import useTypedSelector from '../hooks/use-typed-selector.hook';
-import { settings } from '../constants/sidebar-tabs/settings.constant';
-import project from '../constants/project.constant';
+import { CodeEditor, Output, Container } from '../components';
+import { project, settings } from '../constants';
+import { HeaderContainer, SidebarContainer, ConsoleContainer } from '../containers';
+import { useStorage, useActions, useTypedSelector } from '../hooks';
 
-export default function Project() {
+export function Project() {
   const [html, setHTML] = useStorage(project.html.storage, '');
   const [css, setCSS] = useStorage(project.css.storage, '');
   const [js, setJS] = useStorage(project.js.storage, '');

@@ -2,14 +2,13 @@ import { SelectChangeEvent, FormControl, InputLabel, Select } from '@mui/materia
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Sidebar from '../../../../components/sidebar/Sidebar.component';
-import { MenuItemStyled } from '../../../../components/sidebar/styles/sidebar.style';
-import { settings } from '../../../../constants/sidebar-tabs/settings.constant';
-import { setStorage } from '../../../../helpers/storage.helper';
-import useActions from '../../../../hooks/use-actions.hook';
-import useTypedSelector from '../../../../hooks/use-typed-selector.hook';
+import { Sidebar } from '../../../../../components';
+import { MenuItemStyled } from '../../../../../components/sidebar/styles/sidebar.style';
+import { settings } from '../../../../../constants';
+import { setStorage } from '../../../../../helpers/storage.helper';
+import { useActions, useTypedSelector } from '../../../../../hooks';
 
-export default function LayoutSetting() {
+export function LayoutSetting() {
   const { setLayout } = useActions();
   const { layoutType } = useTypedSelector((store) => store.layout);
 

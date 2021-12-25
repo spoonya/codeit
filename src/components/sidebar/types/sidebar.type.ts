@@ -1,25 +1,25 @@
-export interface Inner {
+export interface InnerProps {
   children: React.ReactNode;
 }
 
-export interface Tab {
+export interface TabProps {
   children?: React.ReactNode;
   isActive: boolean;
 }
 
-export interface Item {
+export interface ItemProps {
   children: React.ReactNode;
   isActive?: boolean;
   onClick?: () => void;
 }
 
-export interface Switch {
+export interface SwitchProps {
   label: string;
   checked: boolean;
   onChange: () => void;
 }
 
-export interface DialogTitles {
+export interface DialogTitlesProps {
   id: string;
   children?: React.ReactNode;
   onClose: () => void;

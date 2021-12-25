@@ -22,7 +22,7 @@ export const Menu = styled.ul`
   padding: 15px 7px 0;
 `;
 
-export const MenuItem = styled.li<TSidebar.Item>`
+export const MenuItem = styled.li<TSidebar.ItemProps>`
   position: relative;
 
   display: flex;
@@ -65,7 +65,7 @@ export const MenuItem = styled.li<TSidebar.Item>`
   }
 `;
 
-export const Tab = styled.div<TSidebar.Tab>`
+export const Tab = styled.div<TSidebar.TabProps>`
   display: none;
 
   width: 245px;

@@ -61,7 +61,7 @@ export const settings: Settings = {
     storage: 'codeit-theme',
   },
   liveMode: {
-    defaultValue: 'manually',
+    defaultValue: 'auto',
     values: {
       auto: 'auto',
       manually: 'manually',

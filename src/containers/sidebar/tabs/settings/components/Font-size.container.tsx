@@ -2,13 +2,12 @@ import { FormControl, InputLabel, Select, SelectChangeEvent } from '@mui/materia
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { editorRefArray } from '../../../../components/editor/Editor.component';
-import Sidebar from '../../../../components/sidebar/Sidebar.component';
-import { MenuItemStyled } from '../../../../components/sidebar/styles/sidebar.style';
-import { settings } from '../../../../constants/sidebar-tabs/settings.constant';
-import { getStorage, setStorage } from '../../../../helpers/storage.helper';
+import { Sidebar, editorRefArray } from '../../../../../components';
+import { MenuItemStyled } from '../../../../../components/sidebar/styles/sidebar.style';
+import { settings } from '../../../../../constants';
+import { getStorage, setStorage } from '../../../../../helpers';
 
-export default function FontSizeSetting() {
+export function FontSizeSetting() {
   const { t } = useTranslation();
 
   const initValue: number =

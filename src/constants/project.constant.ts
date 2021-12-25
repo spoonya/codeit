@@ -18,7 +18,7 @@ interface Project {
   };
 }
 
-const project: Project = {
+export const project: Project = {
   title: {
     defaultVal: 'Untitled',
     value: '',
@@ -37,5 +37,3 @@ const project: Project = {
     storage: 'codeit-js',
   },
 };
-
-export default project;
