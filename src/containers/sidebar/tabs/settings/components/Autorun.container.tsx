@@ -6,17 +6,17 @@ import { settings } from '../../../../../constants';
 import { useActions, useTypedSelector } from '../../../../../hooks';
 
 export function LiveModeSetting() {
-  const { liveMode } = useTypedSelector((store) => store.liveMode);
-  const { toggleLiveMode } = useActions();
+  const { autorun } = useTypedSelector((store) => store.autorun);
+  const { toggleAutorun } = useActions();
 
   const { t } = useTranslation();
 
   return (
     <Sidebar.TabSubListItem>
       <Sidebar.TabSwitch
-        label={t('sidebar.settings.editor.liveMode')}
-        onChange={() => toggleLiveMode(liveMode)}
-        checked={liveMode === settings.liveMode.values.auto}
+        label={t('sidebar.settings.editor.autorun')}
+        onChange={() => toggleAutorun(autorun)}
+        checked={autorun === settings.autorun.values.auto}
       />
     </Sidebar.TabSubListItem>
   );

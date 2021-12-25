@@ -7,7 +7,7 @@ interface Settings {
     };
     storage: string;
   };
-  liveMode: {
+  autorun: {
     defaultValue: string;
     values: {
       auto: string;
@@ -60,7 +60,7 @@ export const settings: Settings = {
     },
     storage: 'codeit-theme',
   },
-  liveMode: {
+  autorun: {
     defaultValue: 'auto',
     values: {
       auto: 'auto',

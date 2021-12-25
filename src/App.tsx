@@ -3,10 +3,9 @@ import { ThemeProvider } from 'styled-components';
 import { ThemeProvider as ThemeProviderMUI } from '@mui/material/styles';
 
 import GlobalStyle from './global-style';
-import { themeDark, themeLight, themeMUI } from './constants/theme.constant';
+import { themeDark, themeLight, themeMUI, settings } from './constants';
 import { useTypedSelector } from './hooks';
 import { Project } from './pages';
-import { settings } from './constants';
 
 export default function App() {
   const { themeMode } = useTypedSelector((store) => store.theme);

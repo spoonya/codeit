@@ -34,7 +34,7 @@ const english: Localization = {
       },
       editor: {
         title: 'Editor',
-        liveMode: 'Live mode',
+        autorun: 'Autorun',
         fontSize: {
           title: 'Font size',
           values: {

@@ -32,7 +32,7 @@ export default interface Localization {
       };
       editor: {
         title: string;
-        liveMode: string;
+        autorun: string;
         fontSize: {
           title: string;
           values: {

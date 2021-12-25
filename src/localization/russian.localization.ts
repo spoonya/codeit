@@ -34,7 +34,7 @@ const russian: Localization = {
       },
       editor: {
         title: 'Редактор',
-        liveMode: 'Автозапуск',
+        autorun: 'Автозапуск',
         fontSize: {
           title: 'Размер шрифта',
           values: {

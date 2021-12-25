@@ -2,8 +2,8 @@ import { Dispatch } from 'react';
 import { loader } from '@monaco-editor/react';
 
 import { ThemeAction, ThemeActionTypes } from '../reducers/theme/theme.type';
-import { settings } from '../../constants/sidebar-tabs/settings.constant';
-import { setStorage } from '../../helpers/storage.helper';
+import { settings } from '../../constants';
+import { setStorage } from '../../helpers';
 
 const setTheme = (theme: string): ThemeAction => ({
   type: ThemeActionTypes.SET_THEME,

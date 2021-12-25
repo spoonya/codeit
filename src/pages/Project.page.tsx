@@ -14,7 +14,7 @@ export function Project() {
 
   const { setLogs } = useActions();
   const { layoutType } = useTypedSelector((store) => store.layout);
-  const { liveMode } = useTypedSelector((store) => store.liveMode);
+  const { autorun } = useTypedSelector((store) => store.autorun);
 
   const delay = 1000;
   const srcTemplate: string = `
@@ -35,7 +35,7 @@ export function Project() {
 
   React.useEffect(() => {
     const timeout = setTimeout(() => {
-      if (liveMode !== settings.liveMode.values.auto) return;
+      if (autorun !== settings.autorun.values.auto) return;
 
       setSrcDoc(srcTemplate);
     }, delay);
@@ -48,7 +48,7 @@ export function Project() {
       <HeaderContainer
         srcDoc={srcTemplate}
         setSrcDoc={setSrcDoc}
-        isRunDisabled={liveMode === settings.liveMode.values.auto}
+        isRunDisabled={autorun === settings.autorun.values.auto}
       />
       <Container>
         <SidebarContainer />
