@@ -87,6 +87,7 @@ export function CodeEditor(props: CodeEditorProps) {
           wrappingIndent: 'same',
           formatOnPaste: true,
           formatOnType: true,
+          fixedOverflowWidgets: true,
         }}
       />
     </EditorWrapper>

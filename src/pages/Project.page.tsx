@@ -22,6 +22,8 @@ export function Project() {
           <body>${html}</body>
           <style>${css}</style>
           <script>
+            "use strict";
+
             setTimeout(() => {
               try {
                 ${js}
