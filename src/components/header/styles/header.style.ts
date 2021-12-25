@@ -1,4 +1,6 @@
+import { Button } from '@mui/material';
 import styled from 'styled-components/macro';
+import { styled as styledMui } from '@mui/material/styles';
 
 export const Container = styled.header`
   background-color: ${({ theme }) => theme.background.secondary};
@@ -52,3 +54,22 @@ export const SignIn = styled.button`
     background-color: ${({ theme }) => theme.brand.secondary};
   }
 `;
+
+export const Run = styledMui(Button)({
+  textTransform: 'none',
+  backgroundColor: '#1DB954',
+  fontSize: 14,
+  boxShadow: 'none',
+  height: '28px',
+  padding: '5px 10px',
+  '&:hover': {
+    boxShadow: 'none',
+    backgroundColor: '#139f44',
+  },
+  '&:active': {
+    boxShadow: 'none',
+  },
+  '&:focus': {
+    boxShadow: 'none',
+  },
+});

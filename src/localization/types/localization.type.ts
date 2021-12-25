@@ -1,6 +1,7 @@
 export default interface Localization {
   header: {
     signIn: string;
+    run: string;
   };
   tooltips: {
     sidebar: {
@@ -31,6 +32,7 @@ export default interface Localization {
       };
       editor: {
         title: string;
+        liveMode: string;
         fontSize: {
           title: string;
           values: {

@@ -3,6 +3,7 @@ import Localization from './types/localization.type';
 const russian: Localization = {
   header: {
     signIn: 'Войти',
+    run: 'Запуск',
   },
   tooltips: {
     sidebar: {
@@ -33,6 +34,7 @@ const russian: Localization = {
       },
       editor: {
         title: 'Редактор',
+        liveMode: 'Автозапуск',
         fontSize: {
           title: 'Размер шрифта',
           values: {

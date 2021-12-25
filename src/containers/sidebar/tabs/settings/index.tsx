@@ -8,6 +8,7 @@ import LocalizationSetting from './Localization.container';
 import LayoutSetting from './Layout.container';
 import ThemeSetting from './Theme.container';
 import { Tab } from '../../../../components/sidebar/types/sidebar.type';
+import LiveModeSetting from './Live-mode.container';
 
 export default function SettingsTab(props: Tab) {
   const { isActive } = props;
@@ -30,6 +31,7 @@ export default function SettingsTab(props: Tab) {
         <Sidebar.TabListItem>
           <Sidebar.TabListName>{t('sidebar.settings.editor.title')}</Sidebar.TabListName>
           <Sidebar.TabSubList>
+            <LiveModeSetting />
             <FontSizeSetting />
             <IndentSizeSetting />
           </Sidebar.TabSubList>

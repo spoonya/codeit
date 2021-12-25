@@ -3,6 +3,7 @@ import Localization from './types/localization.type';
 const english: Localization = {
   header: {
     signIn: 'Sign In',
+    run: 'Run',
   },
   tooltips: {
     sidebar: {
@@ -33,6 +34,7 @@ const english: Localization = {
       },
       editor: {
         title: 'Editor',
+        liveMode: 'Live mode',
         fontSize: {
           title: 'Font size',
           values: {

@@ -48,6 +48,7 @@ const GlobalStyle = createGlobalStyle`
     display: inline-block;
 
     font: inherit;
+    color: inherit;
 
     padding: 0;
     margin: 0;

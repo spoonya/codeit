@@ -83,8 +83,9 @@ export default function CodeEditor(props: CodeEditorProps) {
           },
           tabSize: +getStorage(settings.indentSize.storage) || settings.indentSize.defaultValue,
           fontSize: +getStorage(settings.fontSize.storage) || settings.fontSize.defaultValue,
-          wordWrap: 'bounded',
+          wordWrap: 'on',
           wordWrapColumn: 80,
+          wrappingIndent: 'same',
           formatOnPaste: true,
           formatOnType: true,
         }}

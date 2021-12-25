@@ -7,6 +7,14 @@ interface Settings {
     };
     storage: string;
   };
+  liveMode: {
+    defaultValue: string;
+    values: {
+      auto: string;
+      manually: string;
+    };
+    storage: string;
+  };
   layout: {
     defaultValue: string;
     values: {
@@ -51,6 +59,14 @@ export const settings: Settings = {
       dark: 'dark',
     },
     storage: 'codeit-theme',
+  },
+  liveMode: {
+    defaultValue: 'manually',
+    values: {
+      auto: 'auto',
+      manually: 'manually',
+    },
+    storage: 'codeit-live',
   },
   layout: {
     defaultValue: 'horizontal',
