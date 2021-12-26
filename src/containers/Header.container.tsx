@@ -5,12 +5,11 @@ import { Header } from '../components';
 
 interface HeaderProps {
   srcDoc: string;
-  isRunDisabled: boolean;
   setSrcDoc: (value: string) => void;
 }
 
 export function HeaderContainer(props: HeaderProps) {
-  const { srcDoc, setSrcDoc, isRunDisabled } = props;
+  const { srcDoc, setSrcDoc } = props;
 
   const { t } = useTranslation();
 
@@ -28,7 +27,7 @@ export function HeaderContainer(props: HeaderProps) {
         <Header.Logo />
         <Header.ProjectTitle>Project</Header.ProjectTitle>
       </Header.Group>
-      <Header.Run disabled={isRunDisabled} btnLabel={t('header.run')} onClick={handleClick} />
+      <Header.Run btnLabel={t('header.run')} onClick={handleClick} />
       <Header.SignIn>{t('header.signIn')}</Header.SignIn>
     </Header>
   );

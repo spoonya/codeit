@@ -1,3 +1,4 @@
+/* eslint-disable no-eval */
 import React from 'react';
 import { SplitPane } from 'react-multi-split-pane';
 
@@ -22,13 +23,12 @@ export function Project() {
           <body>${html}</body>
           <style>${css}</style>
           <script>
-            "use strict";
-
             setTimeout(() => {
               try {
-                ${js}
+                let func = new Function(\`${js}\`);
+                func();
               } catch (e) {
-                console.error(e.message)
+                console.error(e)
               }
             }, ${delay});
           </script>
@@ -47,11 +47,7 @@ export function Project() {
 
   return (
     <>
-      <HeaderContainer
-        srcDoc={srcTemplate}
-        setSrcDoc={setSrcDoc}
-        isRunDisabled={autorun === settings.autorun.values.auto}
-      />
+      <HeaderContainer srcDoc={srcTemplate} setSrcDoc={setSrcDoc} />
       <Container>
         <SidebarContainer />
         {layoutType === settings.layout.values.horizontal ? (

@@ -9,7 +9,6 @@ interface InnerProps {
 
 interface RunProps {
   btnLabel: string;
-  disabled: boolean;
   onClick: () => void;
 }
 
@@ -51,15 +50,10 @@ Header.SignIn = function HeaderSignIn(props: InnerProps) {
 };
 
 Header.Run = function HeaderRun(props: RunProps) {
-  const { btnLabel, onClick, disabled } = props;
+  const { btnLabel, onClick } = props;
 
   return (
-    <Run
-      onClick={onClick}
-      disabled={disabled}
-      variant="contained"
-      startIcon={<PlayArrowIcon sx={{ fontSize: 30 }} />}
-    >
+    <Run onClick={onClick} variant="contained" startIcon={<PlayArrowIcon sx={{ fontSize: 30 }} />}>
       {btnLabel}
     </Run>
   );
