@@ -12,14 +12,13 @@ export function IndentSizeSetting() {
 
   const initValue: number =
     +getStorage(settings.indentSize.storage) || settings.indentSize.defaultValue;
-  const [indentSize, setindentSize] = React.useState(initValue);
+  const [indentSize, setIndentSize] = React.useState(initValue);
 
   const handleChange = (event: SelectChangeEvent) => {
-    setindentSize(parseInt(event.target.value, 10));
+    setIndentSize(parseInt(event.target.value, 10));
 
-    editorRefArray.forEach((editor: any) =>
-      editor.updateOptions({ tabSize: `${event.target.value}` }),
-    );
+    editorRefArray.forEach((editor: any) => editor.updateOptions({ tabSize: event.target.value }));
+    editorRefArray.forEach((editor: any) => editor.trigger('any', 'editor.action.formatDocument'));
     setStorage(settings.indentSize.storage, event.target.value);
   };
 

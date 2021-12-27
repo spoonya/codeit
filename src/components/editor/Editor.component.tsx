@@ -85,6 +85,7 @@ export function CodeEditor(props: CodeEditorProps) {
           wordWrap: 'on',
           wordWrapColumn: 80,
           wrappingIndent: 'same',
+          detectIndentation: false,
           formatOnPaste: true,
           formatOnType: true,
           fixedOverflowWidgets: true,

@@ -17,12 +17,9 @@ export function FontSizeSetting() {
   const handleChange = (event: SelectChangeEvent) => {
     setFontSize(parseInt(event.target.value, 10));
 
-    editorRefArray.forEach((editor: any) =>
-      editor.updateOptions({ fontSize: `${event.target.value}` }),
-    );
+    editorRefArray.forEach((editor: any) => editor.updateOptions({ fontSize: event.target.value }));
     setStorage(settings.fontSize.storage, event.target.value);
   };
-
   return (
     <Sidebar.TabSubListItem>
       <Sidebar.TabSelect>
