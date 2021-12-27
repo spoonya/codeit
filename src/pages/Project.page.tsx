@@ -1,9 +1,8 @@
-/* eslint-disable no-eval */
 import React from 'react';
 import { SplitPane } from 'react-multi-split-pane';
 
 import { CodeEditor, Output, Container } from '../components';
-import { project, settings } from '../constants';
+import { project, RUN_DELAY, settings } from '../constants';
 import { HeaderContainer, SidebarContainer, ConsoleContainer } from '../containers';
 import { useStorage, useActions, useTypedSelector } from '../hooks';
 
@@ -17,20 +16,26 @@ export function Project() {
   const { layoutType } = useTypedSelector((store) => store.layout);
   const { autorun } = useTypedSelector((store) => store.autorun);
 
-  const delay = 1000;
   const srcTemplate: string = `
         <html>
           <body>${html}</body>
           <style>${css}</style>
           <script>
-            setTimeout(() => {
+            window.onerror = function(e) {
+              setTimeout(() => {
+                console.error(e);
+                return false;
+              })
+            };
+          </script>
+          <script>
+            setTimeout(()=> {
               try {
-                let func = new Function(\`${js}\`);
-                func();
+                ${js}
               } catch (e) {
-                console.error(e)
+                console.error(e);
               }
-            }, ${delay});
+            })
           </script>
         </html>
       `;
@@ -40,7 +45,7 @@ export function Project() {
       if (autorun !== settings.autorun.values.auto) return;
 
       setSrcDoc(srcTemplate);
-    }, delay);
+    }, RUN_DELAY);
 
     return () => clearTimeout(timeout);
   }, [html, css, js]);
@@ -52,7 +57,7 @@ export function Project() {
         <SidebarContainer />
         {layoutType === settings.layout.values.horizontal ? (
           <Container.Inner>
-            <SplitPane split="horizontal" defaultSizes={[65, 20, 3]} minSize={[28, 20, 27]}>
+            <SplitPane split="horizontal" defaultSizes={[65, 20, 25]} minSize={[28, 20, 27]}>
               <SplitPane split="vertical" minSize={55}>
                 <CodeEditor language="html" code={html} onChanged={setHTML} langLabel="html" />
                 <CodeEditor language="css" code={css} onChanged={setCSS} langLabel="css" />

@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Header } from '../components';
+import { RUN_DELAY } from '../constants';
 
 interface HeaderProps {
   srcDoc: string;
@@ -18,7 +19,7 @@ export function HeaderContainer(props: HeaderProps) {
 
     setTimeout(() => {
       setSrcDoc(srcDoc);
-    }, 1000);
+    }, RUN_DELAY);
   };
 
   return (
