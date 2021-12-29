@@ -99,7 +99,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.brand.primary};
+    background: ${({ theme }) => theme.primary.main};
   }
 
   /*================Resizer================*/
@@ -109,7 +109,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 
     opacity: 1;
-    background-color: ${({ theme }) => theme.divider};
+    background-color: ${({ theme }) => theme.myDivider};
 
     background-clip: padding-box;
   }

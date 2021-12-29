@@ -4,8 +4,7 @@ import { styled as styledMui } from '@mui/material/styles';
 
 export const Container = styled.header`
   background-color: ${({ theme }) => theme.background.secondary};
-  border-bottom: 1px solid ${({ theme }) => theme.divider};
-
+  border-bottom: 1px solid ${({ theme }) => theme.myDivider};
   height: 42px;
 `;
 
@@ -31,7 +30,7 @@ export const Logo = styled.h1`
   margin-right: 20px;
 
   span {
-    color: ${({ theme }) => theme.brand.primary};
+    color: ${({ theme }) => theme.primary.main};
   }
 `;
 
@@ -45,26 +44,26 @@ export const SignIn = styled.button`
 
   padding: 5px;
 
-  background-color: ${({ theme }) => theme.brand.primary};
+  background-color: ${({ theme }) => theme.primary.main};
   border-radius: 3px;
 
   transition: background-color 0.1s linear;
 
   &:hover {
-    background-color: ${({ theme }) => theme.brand.secondary};
+    background-color: ${({ theme }) => theme.primary.dark};
   }
 `;
 
-export const Run = styledMui(Button)({
+export const Run = styledMui(Button)(({ theme }) => ({
   textTransform: 'none',
-  backgroundColor: '#1DB954',
+  backgroundColor: theme.palette.common.green.primary,
   fontSize: 14,
   boxShadow: 'none',
   height: '28px',
   padding: '5px 10px',
   '&:hover': {
     boxShadow: 'none',
-    backgroundColor: '#139f44',
+    backgroundColor: theme.palette.common.green.secondary,
   },
   '&:active': {
     boxShadow: 'none',
@@ -72,8 +71,4 @@ export const Run = styledMui(Button)({
   '&:focus': {
     boxShadow: 'none',
   },
-  '&:disabled': {
-    backgroundColor: '#157938',
-    color: '#bdbdbd',
-  },
-});
+}));

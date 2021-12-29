@@ -8,7 +8,7 @@ export const Container = styled.div`
   display: flex;
 
   background-color: ${({ theme }) => theme.background.secondary};
-  border-right: 1px solid ${({ theme }) => theme.divider};
+  border-right: 1px solid ${({ theme }) => theme.myDivider};
 `;
 
 export const Menu = styled.ul`
@@ -46,7 +46,7 @@ export const MenuItem = styled.li<TSidebar.ItemProps>`
 
     content: '';
 
-    background-color: ${({ theme }) => theme.brand.primary};
+    background-color: ${({ theme }) => theme.primary.main};
 
     width: 2px;
     height: 0;
@@ -57,7 +57,7 @@ export const MenuItem = styled.li<TSidebar.ItemProps>`
   }
 
   &:hover {
-    color: ${({ theme }) => theme.brand.primary};
+    color: ${({ theme }) => theme.primary.main};
   }
 
   &:not(:last-child) {
@@ -71,13 +71,13 @@ export const Tab = styled.div<TSidebar.TabProps>`
   width: 245px;
   height: 100%;
 
-  border-left: 1px solid ${({ theme }) => theme.divider};
+  border-left: 1px solid ${({ theme }) => theme.myDivider};
 
   ${({ isActive }) => isActive && 'display: block;'}
 `;
 
 export const TabHeader = styled.div`
-  border-bottom: 1px solid ${({ theme }) => theme.divider};
+  border-bottom: 1px solid ${({ theme }) => theme.myDivider};
 
   text-transform: uppercase;
 `;
@@ -115,11 +115,11 @@ export const TabListName = styled.p`
 
 export const TabSwitch = styled.div`
   .MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked {
-    color: ${({ theme }) => theme.brand.primary};
+    color: ${({ theme }) => theme.primary.main};
   }
 
   .MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track {
-    background-color: ${({ theme }) => theme.brand.primary};
+    background-color: ${({ theme }) => theme.primary.main};
   }
 
   .MuiTypography-root {

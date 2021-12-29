@@ -1,67 +1,144 @@
-import { DefaultTheme } from 'styled-components';
 import { darken } from 'polished';
-import { createTheme } from '@mui/material/styles';
+import { PaletteMode } from '@mui/material';
+import { DefaultTheme } from 'styled-components';
+
+import { settings } from './sidebar-tabs/settings.constant';
+
+declare module '@mui/material/styles/createPalette' {
+  interface Palette {
+    editor: {
+      line: string;
+      lineNum: string;
+    };
+
+    white: {
+      primary: string;
+      secondary: string;
+    };
+
+    divider: string;
+  }
+
+  interface CommonColors {
+    white: string;
+    black: string;
+    green: {
+      primary: string;
+      secondary: string;
+    };
+  }
+
+  interface TypeBackground {
+    primary: string;
+    secondary: string;
+    static: string;
+  }
+
+  interface ThemeOptions {
+    background?: {
+      primary?: string;
+      secondary?: string;
+      static?: string;
+    };
+
+    editor?: {
+      line?: string;
+      lineNum?: string;
+    };
+
+    white?: {
+      primary?: string;
+      secondary?: string;
+    };
+
+    common?: {
+      white?: string;
+      black?: string;
+      green?: {
+        primary?: string;
+        secondary?: string;
+      };
+    };
+
+    divider?: string;
+  }
+}
 
 export const themeDark: DefaultTheme = {
+  primary: {
+    main: '#485fe0',
+    dark: darken(0.06, '#485fe0'),
+  },
+  background: {
+    paper: '#21252b',
+    default: '#21252b',
+    primary: '#21252b',
+    secondary: '#282c34',
+    static: '#21252b',
+  },
   text: {
     primary: '#fff',
     secondary: '#cacaca',
   },
-  background: {
-    primary: '#282c34',
-    secondary: '#21252b',
-  },
   editor: {
     line: '#333842',
   },
-  brand: {
-    primary: '#485fe0',
-    secondary: darken(0.06, '#485fe0'),
-  },
-  black: {
-    primary: '#000',
+  common: {
+    black: '#000',
+    green: {
+      primary: '#1DB954',
+      secondary: '#139f44',
+    },
   },
   white: {
     primary: '#fff',
     secondary: '#ccc',
   },
-  divider: '#151515',
+  myDivider: '#151515',
+  divider: '#5d5d5d',
 };
 
 export const themeLight: DefaultTheme = {
+  primary: {
+    main: '#485fe0',
+    dark: darken(0.06, '#485fe0'),
+  },
+  background: {
+    paper: '#f9f9fa',
+    default: '#f9f9fa',
+    primary: '#f9f9fa',
+    secondary: '#eff0f2',
+    static: '#21252b',
+  },
   text: {
     primary: '#353535',
     secondary: '#656565',
-  },
-  background: {
-    primary: '#f9f9fa',
-    secondary: '#eff0f2',
   },
   editor: {
     line: '#ececec',
     lineNum: '#a7a7a7',
   },
-  brand: {
-    primary: '#485fe0',
-    secondary: darken(0.06, '#485fe0'),
-  },
-  black: {
-    primary: '#000',
+  common: {
+    black: '#000',
+    green: {
+      primary: '#1DB954',
+      secondary: '#139f44',
+    },
   },
   white: {
     primary: '#fff',
     secondary: '#ddd',
   },
-  divider: '#d2d2d2',
+  myDivider: '#d2d2d2',
 };
 
-export const themeMUI = createTheme({
-  typography: {
-    fontFamily: ['JetBrains Mono'].join(','),
-  },
+export const getDesignTokens = (mode: PaletteMode) => ({
   palette: {
-    primary: {
-      main: '#485fe0',
-    },
+    mode,
+    ...(mode === settings.theme.values.light ? themeLight : themeDark),
+  },
+  typography: {
+    fontFamily: 'JetBrains Mono',
+    fontSize: 14,
   },
 });

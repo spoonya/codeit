@@ -2,11 +2,18 @@ import 'styled-components';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    text: {
-      primary: string;
-      secondary: string;
+    primary: {
+      main: string;
+      dark: string;
     };
     background: {
+      paper: string;
+      default: string;
+      primary: string;
+      secondary: string;
+      static: string;
+    };
+    text: {
       primary: string;
       secondary: string;
     };
@@ -14,17 +21,19 @@ declare module 'styled-components' {
       line: string;
       lineNum?: string;
     };
-    brand: {
-      primary: string;
-      secondary: string;
-    };
-    black: {
-      primary: string;
+    common: {
+      black: string;
+      green: {
+        primary: string;
+        secondary: string;
+      };
     };
     white: {
       primary: string;
       secondary: string;
     };
-    divider: string;
+
+    myDivider: string;
+    divider?: string;
   }
 }

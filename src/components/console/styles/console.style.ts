@@ -1,5 +1,4 @@
 import styled from 'styled-components/macro';
-import { themeDark } from '../../../constants/theme.constant';
 
 export const Container = styled.div`
   position: relative;
@@ -8,7 +7,7 @@ export const Container = styled.div`
   min-width: 200px;
   max-width: 100%;
 
-  background-color: ${({ theme }) => theme.background.secondary};
+  background-color: ${({ theme }) => theme.background.primary};
 `;
 
 export const Header = styled.div`
@@ -23,7 +22,7 @@ export const Header = styled.div`
 export const Title = styled.p``;
 
 export const Content = styled.div`
-  background-color: ${themeDark.background.secondary};
+  background-color: ${({ theme }) => theme.background.static};
   height: calc(100% - 25px);
   overflow-y: auto;
 `;
@@ -40,7 +39,7 @@ export const Clear = styled.button`
   transition: color 0.1s linear, background-color 0.1s linear;
 
   &:hover {
-    background-color: ${({ theme }) => theme.brand.primary};
+    background-color: ${({ theme }) => theme.primary.main};
     color: ${({ theme }) => theme.white.primary};
   }
 `;

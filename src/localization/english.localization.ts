@@ -15,8 +15,8 @@ const english: Localization = {
     share: {
       title: 'Share project',
       label: 'Shareable Link',
-      button: 'Copy link',
-      alert: 'Link copied!',
+      button: 'Copy',
+      alert: 'Link copied',
     },
     settings: {
       title: 'Settings',

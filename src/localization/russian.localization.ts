@@ -16,7 +16,7 @@ const russian: Localization = {
       title: 'Поделиться проектом',
       label: 'Ссылка общего доступа',
       button: 'Копировать',
-      alert: 'Ссылка скопирована!',
+      alert: 'Ссылка скопирована',
     },
     settings: {
       title: 'Настройки',

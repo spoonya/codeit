@@ -220,7 +220,7 @@ Sidebar.ShareLink = function ShareLink() {
               handleOpenAlert();
             }}
             sx={{ fontSize: 18 }}
-            variant="text"
+            variant="contained"
           >
             {t('sidebar.share.button')}
           </Button>

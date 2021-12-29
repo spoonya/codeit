@@ -1,3 +1,4 @@
+import { PaletteMode } from '@mui/material';
 import { Dispatch } from 'react';
 import { loader } from '@monaco-editor/react';
 
@@ -5,29 +6,29 @@ import { ThemeAction, ThemeActionTypes } from '../reducers/theme/theme.type';
 import { settings } from '../../constants';
 import { setStorage } from '../../helpers';
 
-const setTheme = (theme: string): ThemeAction => ({
+const setTheme = (theme: PaletteMode): ThemeAction => ({
   type: ThemeActionTypes.SET_THEME,
   payload: theme,
 });
 
-const toggleEditorTheme = (theme: string) => {
+const toggleEditorTheme = (theme: PaletteMode) => {
   loader.init().then((monaco) => {
     if (theme === settings.theme.values.light) {
-      monaco.editor.setTheme(settings.theme.values.light);
+      monaco.editor.setTheme('light');
     } else {
-      monaco.editor.setTheme(settings.theme.values.dark);
+      monaco.editor.setTheme('dark');
     }
   });
 };
 
-export const toggleTheme = (theme: string) => (dispatch: Dispatch<ThemeAction>) => {
+export const toggleTheme = (theme: PaletteMode) => (dispatch: Dispatch<ThemeAction>) => {
   if (theme === settings.theme.values.light) {
-    dispatch(setTheme(settings.theme.values.dark));
-    toggleEditorTheme(settings.theme.values.dark);
-    setStorage(settings.theme.storage, settings.theme.values.dark);
+    dispatch(setTheme('dark'));
+    toggleEditorTheme('dark');
+    setStorage(settings.theme.storage, 'dark');
   } else {
-    dispatch(setTheme(settings.theme.values.light));
-    toggleEditorTheme(settings.theme.values.light);
-    setStorage(settings.theme.storage, settings.theme.values.light);
+    dispatch(setTheme('light'));
+    toggleEditorTheme('light');
+    setStorage(settings.theme.storage, 'light');
   }
 };
