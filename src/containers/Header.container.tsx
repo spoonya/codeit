@@ -29,7 +29,7 @@ export function HeaderContainer(props: HeaderProps) {
         <Header.ProjectTitle>Project</Header.ProjectTitle>
       </Header.Group>
       <Header.Run btnLabel={t('header.run')} onClick={handleClick} />
-      <Header.SignIn>{t('header.signIn')}</Header.SignIn>
+      <Header.SignIn />
     </Header>
   );
 }

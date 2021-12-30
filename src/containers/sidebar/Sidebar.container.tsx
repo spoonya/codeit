@@ -8,6 +8,7 @@ import { Sidebar, Tooltip } from '../../components';
 
 export function SidebarContainer() {
   const { t } = useTranslation();
+
   const [activeTab, setActiveTab] = React.useState('');
 
   const toggleTab = (tabName: string): void => {

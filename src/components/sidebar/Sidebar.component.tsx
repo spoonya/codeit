@@ -148,6 +148,7 @@ function DialogTitleStyled(props: TSidebar.DialogTitlesProps) {
 
 Sidebar.ShareLink = function ShareLink() {
   const { t } = useTranslation();
+
   const [openModal, setOpenModal] = React.useState(false);
   const [openAlert, setOpenAlert] = React.useState(false);
 
@@ -190,7 +191,18 @@ Sidebar.ShareLink = function ShareLink() {
           {t('sidebar.share.alert')}
         </Alert>
       </Snackbar>
-      <Dialog onClose={handleCloseModal} aria-labelledby="share-dialog-title" open={openModal}>
+      <Dialog
+        fullWidth
+        onClose={handleCloseModal}
+        aria-labelledby="share-dialog-title"
+        open={openModal}
+        sx={{
+          '& .MuiDialog-paper': { maxWidth: 465 },
+          '& .MuiPaper-root': {
+            backgroundColor: 'background.modal',
+          },
+        }}
+      >
         <DialogTitleStyled id="share-dialog-title" onClose={handleCloseModal}>
           {t('sidebar.share.title')}
         </DialogTitleStyled>
@@ -199,6 +211,7 @@ Sidebar.ShareLink = function ShareLink() {
             variant="standard"
             label={t('sidebar.share.label')}
             value={window.location.href}
+            fullWidth
             InputProps={{
               style: {
                 fontSize: 18,
@@ -219,8 +232,7 @@ Sidebar.ShareLink = function ShareLink() {
               handleCloseModal();
               handleOpenAlert();
             }}
-            sx={{ fontSize: 18 }}
-            variant="contained"
+            sx={{ fontSize: 16 }}
           >
             {t('sidebar.share.button')}
           </Button>

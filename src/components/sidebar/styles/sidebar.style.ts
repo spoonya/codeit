@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 import { MenuItem as SelectItem, MenuItemProps } from '@mui/material';
-import { styled as styledMui } from '@mui/material/styles';
+import { styled as styledMUI } from '@mui/material/styles';
 
 import * as TSidebar from '../types/sidebar.type';
 
@@ -173,12 +173,8 @@ export const TabSelect = styled.div`
   .MuiSelect-select:focus {
     background: none;
   }
-
-  .css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
-    background-color: ${({ theme }) => theme.background.secondary};
-  }
 `;
 
-export const MenuItemStyled = styledMui(SelectItem)<MenuItemProps>({
+export const MenuItemStyled = styledMUI(SelectItem)<MenuItemProps>({
   fontSize: 14,
 });

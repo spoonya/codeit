@@ -16,7 +16,7 @@ export const Header = styled.div`
   justify-content: space-between;
   padding: 4px 10px;
 
-  background-color: ${({ theme }) => theme.background.primary};
+  background-color: ${({ theme }) => theme.background.secondary};
 `;
 
 export const Title = styled.p``;
@@ -28,11 +28,11 @@ export const Content = styled.div`
 `;
 
 export const Clear = styled.button`
-  background-color: ${({ theme }) => theme.background.secondary};
+  background-color: ${({ theme }) => theme.background.primary};
   color: ${({ theme }) => theme.text.primary};
   font-size: 14px;
 
-  padding: 2px 5px;
+  padding: 2px 6px;
 
   border-radius: 3px;
 

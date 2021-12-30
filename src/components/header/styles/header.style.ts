@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import styled from 'styled-components/macro';
-import { styled as styledMui } from '@mui/material/styles';
+import { styled as styledMUI } from '@mui/material/styles';
 
 export const Container = styled.header`
   background-color: ${({ theme }) => theme.background.secondary};
@@ -24,7 +24,7 @@ export const Group = styled.div`
 `;
 
 export const Logo = styled.h1`
-  font-size: 2.4rem;
+  font-size: 24px;
   text-transform: uppercase;
 
   margin-right: 20px;
@@ -35,7 +35,7 @@ export const Logo = styled.h1`
 `;
 
 export const ProjectTitle = styled.h2`
-  font-size: 1.6rem;
+  font-size: 16px;
 `;
 
 export const SignIn = styled.button`
@@ -54,7 +54,7 @@ export const SignIn = styled.button`
   }
 `;
 
-export const Run = styledMui(Button)(({ theme }) => ({
+export const Run = styledMUI(Button)(({ theme }) => ({
   textTransform: 'none',
   backgroundColor: theme.palette.common.green.primary,
   fontSize: 14,

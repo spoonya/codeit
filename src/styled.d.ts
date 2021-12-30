@@ -12,6 +12,7 @@ declare module 'styled-components' {
       primary: string;
       secondary: string;
       static: string;
+      modal?: string;
     };
     text: {
       primary: string;
@@ -32,7 +33,6 @@ declare module 'styled-components' {
       primary: string;
       secondary: string;
     };
-
     myDivider: string;
     divider?: string;
   }

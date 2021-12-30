@@ -32,6 +32,7 @@ declare module '@mui/material/styles/createPalette' {
     primary: string;
     secondary: string;
     static: string;
+    modal: string;
   }
 
   interface ThemeOptions {
@@ -39,6 +40,7 @@ declare module '@mui/material/styles/createPalette' {
       primary?: string;
       secondary?: string;
       static?: string;
+      modal?: string;
     };
 
     editor?: {
@@ -70,11 +72,12 @@ export const themeDark: DefaultTheme = {
     dark: darken(0.06, '#485fe0'),
   },
   background: {
-    paper: '#21252b',
+    paper: '#282c34',
     default: '#21252b',
     primary: '#21252b',
     secondary: '#282c34',
     static: '#21252b',
+    modal: '#070606',
   },
   text: {
     primary: '#fff',
@@ -95,7 +98,7 @@ export const themeDark: DefaultTheme = {
     secondary: '#ccc',
   },
   myDivider: '#151515',
-  divider: '#5d5d5d',
+  divider: '#3d3d3d',
 };
 
 export const themeLight: DefaultTheme = {
