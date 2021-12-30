@@ -6,20 +6,23 @@ import { TextField, InputAdornment, IconButton, Button } from '@mui/material';
 import { Form } from '../header/styles/header.style';
 
 interface InputAdornmentState {
-  password: string;
+  value: string;
   showPassword: boolean;
 }
 
-export function FormSignIn() {
+export function FormSignUp() {
   const { t } = useTranslation();
 
+  const [username, setUsername] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState<InputAdornmentState>({
-    password: '',
+    value: '',
     showPassword: false,
   });
-  const [emailError, setEmailError] = React.useState(' ');
-  const [passwordError, setPasswordError] = React.useState(' ');
+  const [usernameError, setUsernameError] = React.useState('');
+  const [emailError, setEmailError] = React.useState('');
+  const [passwordError, setPasswordError] = React.useState('');
+  const [usernameDirty, setUsernameDirty] = React.useState(false);
   const [emailDirty, setEmailDirty] = React.useState(false);
   const [passwordDirty, setPasswordDirty] = React.useState(false);
   const [formValid, setFormValid] = React.useState(false);
@@ -37,6 +40,9 @@ export function FormSignIn() {
 
   const handleBlur = (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     switch (event.target.name) {
+      case 'username':
+        setUsernameDirty(true);
+        break;
       case 'email':
         setEmailDirty(true);
         break;
@@ -47,6 +53,26 @@ export function FormSignIn() {
       default:
         break;
     }
+  };
+
+  const handleOnChangeUsername = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setUsername(event.target.value.trim());
+
+    if (!event.target.value.trim()) {
+      setUsernameError(t('form.errors.emptyUsername'));
+
+      return;
+    }
+
+    if (event.target.value.trim().length < 2) {
+      setUsernameError(t('form.errors.invalidUsername'));
+
+      return;
+    }
+
+    setUsernameError('');
   };
 
   const handleOnChangeEmail = (
@@ -92,20 +118,32 @@ export function FormSignIn() {
     };
 
   React.useEffect(() => {
-    if (emailError || passwordError) {
+    if (!email || emailError || !password.value || passwordError || !username || usernameError) {
       setFormValid(false);
     } else {
       setFormValid(true);
     }
-  }, [emailError, passwordError]);
+  }, [usernameError, emailError, passwordError, username, email, password]);
 
   return (
     <Form action="#">
       <TextField
+        name="username"
+        type="text"
+        id="sign-in-username"
+        label={t('form.username')}
+        variant="standard"
+        helperText={usernameError}
+        value={username}
+        onChange={(e) => handleOnChangeUsername(e)}
+        error={usernameDirty && !!usernameError}
+        onBlur={(e) => handleBlur(e)}
+      />
+      <TextField
         name="email"
         type="email"
         id="sign-in-email"
-        helperText={emailError === ' ' ? null : emailError}
+        helperText={emailError}
         label={t('form.email')}
         variant="standard"
         value={email}
@@ -117,11 +155,11 @@ export function FormSignIn() {
         name="password"
         type={password.showPassword ? 'text' : 'password'}
         id="sign-in-password"
-        helperText={passwordError === ' ' ? null : passwordError}
+        helperText={passwordError}
         label={t('form.password')}
         variant="standard"
-        value={password.password}
-        onChange={handleOnChangePassword('password')}
+        value={password.value}
+        onChange={handleOnChangePassword('value')}
         error={passwordDirty && !!passwordError}
         onBlur={(e) => handleBlur(e)}
         InputProps={{
@@ -139,7 +177,7 @@ export function FormSignIn() {
         }}
       />
       <Button type="submit" variant="contained" disabled={!formValid}>
-        {t('form.signInBtn')}
+        {t('form.signUpBtn')}
       </Button>
     </Form>
   );
