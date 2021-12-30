@@ -136,7 +136,10 @@ function DialogTitleStyled(props: TSidebar.DialogTitlesProps) {
           sx={{
             position: 'absolute',
             right: 8,
-            top: 16,
+            top: 15,
+            '& svg': {
+              fontSize: '20px',
+            },
           }}
         >
           <Close />

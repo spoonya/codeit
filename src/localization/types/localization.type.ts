@@ -3,6 +3,23 @@ export default interface Localization {
     signIn: string;
     run: string;
   };
+  form: {
+    signIn: string;
+    signUp: string;
+    signInBtn: string;
+    signUpBtn: string;
+    username: string;
+    password: string;
+    email: string;
+    errors: {
+      emptyPassword: string;
+      invalidPassword: string;
+      emptyEmail: string;
+      invalidEmail: string;
+      emptyUsername: string;
+      invalidUsername: string;
+    };
+  };
   tooltips: {
     sidebar: {
       share: string;

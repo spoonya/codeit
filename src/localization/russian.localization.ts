@@ -5,6 +5,23 @@ const russian: Localization = {
     signIn: 'Войти',
     run: 'Запуск',
   },
+  form: {
+    signIn: 'Вход',
+    signUp: 'Регистрация',
+    signInBtn: 'Войти',
+    signUpBtn: 'Зарегистрироваться',
+    username: 'Имя пользователя',
+    password: 'Пароль',
+    email: 'E-mail',
+    errors: {
+      emptyPassword: 'Пароль не может быть пустым',
+      invalidPassword: 'Не менее 6 символов',
+      emptyEmail: 'E-mail не может быть пустым',
+      invalidEmail: 'Некорректный e-mail',
+      emptyUsername: 'Имя не может быть пустым',
+      invalidUsername: 'Не менее 2 символов',
+    },
+  },
   tooltips: {
     sidebar: {
       share: 'Поделиться',

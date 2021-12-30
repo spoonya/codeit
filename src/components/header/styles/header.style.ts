@@ -72,3 +72,16 @@ export const Run = styledMUI(Button)(({ theme }) => ({
     boxShadow: 'none',
   },
 }));
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+
+  .MuiFormControl-root {
+    margin-bottom: 15px;
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+  }
+`;

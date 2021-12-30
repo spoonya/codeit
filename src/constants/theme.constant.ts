@@ -77,7 +77,7 @@ export const themeDark: DefaultTheme = {
     primary: '#21252b',
     secondary: '#282c34',
     static: '#21252b',
-    modal: '#070606',
+    modal: '#010101',
   },
   text: {
     primary: '#fff',
@@ -98,7 +98,7 @@ export const themeDark: DefaultTheme = {
     secondary: '#ccc',
   },
   myDivider: '#151515',
-  divider: '#3d3d3d',
+  divider: '#373737',
 };
 
 export const themeLight: DefaultTheme = {

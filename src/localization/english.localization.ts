@@ -5,6 +5,23 @@ const english: Localization = {
     signIn: 'Sign In',
     run: 'Run',
   },
+  form: {
+    signIn: 'Sign In',
+    signUp: 'Sign Up',
+    signInBtn: 'Sign In',
+    signUpBtn: 'Sign Up',
+    username: 'Username',
+    password: 'Password',
+    email: 'E-mail',
+    errors: {
+      emptyPassword: 'Password cannot be empty',
+      invalidPassword: 'At least 6 characters',
+      emptyEmail: 'E-mail cannot be empty',
+      invalidEmail: 'Invalid e-mail',
+      emptyUsername: 'Username cannot be empty',
+      invalidUsername: 'At least 2 characters',
+    },
+  },
   tooltips: {
     sidebar: {
       share: 'Share',
