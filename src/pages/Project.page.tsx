@@ -25,7 +25,7 @@ export function Project() {
               setTimeout(() => {
                 console.error(e);
                 return false;
-              })
+              }, ${RUN_DELAY})
             };
           </script>
           <script>
@@ -35,7 +35,7 @@ export function Project() {
               } catch (e) {
                 console.error(e);
               }
-            })
+            }, ${RUN_DELAY})
           </script>
         </html>
       `;

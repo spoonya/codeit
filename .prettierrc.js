@@ -5,5 +5,5 @@ module.exports = {
   bracketSpacing: true,
   trailingComma: 'all',
   printWidth: 100,
-  endOfLine: 'auto',
+  endOfLine: 'lf',
 };
