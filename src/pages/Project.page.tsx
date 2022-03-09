@@ -57,7 +57,7 @@ export function Project() {
         <SidebarContainer />
         {layoutType === settings.layout.values.horizontal ? (
           <Container.Inner>
-            <SplitPane split="horizontal" defaultSizes={[65, 20, 2]} minSize={[28, 20, 27]}>
+            <SplitPane split="horizontal" defaultSizes={[65, 20, 1]} minSize={[28, 20, 28]}>
               <SplitPane split="vertical" minSize={55}>
                 <CodeEditor language="html" code={html} onChanged={setHTML} langLabel="html" />
                 <CodeEditor language="css" code={css} onChanged={setCSS} langLabel="css" />
@@ -75,7 +75,7 @@ export function Project() {
                 <CodeEditor language="css" code={css} onChanged={setCSS} langLabel="css" />
                 <CodeEditor language="javascript" code={js} onChanged={setJS} langLabel="js" />
               </SplitPane>
-              <SplitPane split="horizontal" defaultSizes={[65, 2]} minSize={[25, 27]}>
+              <SplitPane split="horizontal" defaultSizes={[65, 1]} minSize={[25, 28]}>
                 <Output srcDoc={srcDoc} setLogs={setLogs} />
                 <ConsoleContainer />
               </SplitPane>
