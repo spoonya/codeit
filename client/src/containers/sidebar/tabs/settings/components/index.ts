@@ -1,5 +1,6 @@
 export * from './Font-size.container';
 export * from './Indent-size.container';
+export * from './Indent-type.container';
 export * from './Layout.container';
 export * from './Autorun.container';
 export * from './Localization.container';

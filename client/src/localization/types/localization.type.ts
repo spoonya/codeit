@@ -62,6 +62,13 @@ export default interface Localization {
         indentSize: {
           title: string;
         };
+        indentType: {
+          title: string;
+          values: {
+            tabs: string;
+            spaces: string;
+          };
+        };
       };
     };
   };

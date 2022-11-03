@@ -10,6 +10,7 @@ import {
   LiveModeSetting,
   FontSizeSetting,
   IndentSizeSetting,
+  IndentTypeSetting,
 } from './components';
 
 export function SettingsTab(props: TabProps) {
@@ -36,6 +37,7 @@ export function SettingsTab(props: TabProps) {
             <LiveModeSetting />
             <FontSizeSetting />
             <IndentSizeSetting />
+            <IndentTypeSetting />
           </Sidebar.TabSubList>
         </Sidebar.TabListItem>
       </Sidebar.TabList>

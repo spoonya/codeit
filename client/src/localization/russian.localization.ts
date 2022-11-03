@@ -64,6 +64,13 @@ const russian: Localization = {
         indentSize: {
           title: 'Размер отступа',
         },
+        indentType: {
+          title: 'Тип оступа',
+          values: {
+            spaces: 'пробелы',
+            tabs: 'табы',
+          },
+        },
       },
     },
   },

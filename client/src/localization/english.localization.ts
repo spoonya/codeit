@@ -64,6 +64,13 @@ const english: Localization = {
         indentSize: {
           title: 'Indent size',
         },
+        indentType: {
+          title: 'Indent type',
+          values: {
+            spaces: 'spaces',
+            tabs: 'tabs',
+          },
+        },
       },
     },
   },

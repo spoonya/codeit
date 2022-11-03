@@ -31,6 +31,14 @@ interface Settings {
     };
     storage: string;
   };
+  indentType: {
+    defaultValue: boolean;
+    values: {
+      spaces: boolean;
+      tabs: boolean;
+    };
+    storage: string;
+  };
   fontSize: {
     defaultValue: number;
     values: {
@@ -83,6 +91,14 @@ export const settings: Settings = {
       fourSpaces: 4,
     },
     storage: 'codeit-indentSize',
+  },
+  indentType: {
+    defaultValue: true,
+    values: {
+      spaces: true,
+      tabs: false,
+    },
+    storage: 'codeit-indentType',
   },
   fontSize: {
     defaultValue: 14,

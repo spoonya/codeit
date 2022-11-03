@@ -4,7 +4,7 @@ import { emmetCSS, emmetHTML } from 'emmet-monaco-es';
 
 import { themeDark, themeLight, settings } from '../../constants';
 import { EditorWrapper, EditorHeader, EditorLang } from './styles/editor.style';
-import { getStorage } from '../../helpers';
+import { getStorage, parseBooleanString } from '../../helpers';
 
 interface CodeEditorProps {
   language: string;
@@ -82,6 +82,9 @@ export function CodeEditor(props: CodeEditorProps) {
           },
           tabSize: +getStorage(settings.indentSize.storage) || settings.indentSize.defaultValue,
           fontSize: +getStorage(settings.fontSize.storage) || settings.fontSize.defaultValue,
+          insertWhiteSpace: getStorage(settings.indentType.storage)
+            ? parseBooleanString(getStorage(settings.indentType.storage))
+            : settings.indentType.defaultValue,
           wordWrap: 'on',
           wordWrapColumn: 80,
           wrappingIndent: 'same',
@@ -89,6 +92,8 @@ export function CodeEditor(props: CodeEditorProps) {
           formatOnPaste: true,
           formatOnType: true,
           fixedOverflowWidgets: true,
+          renderWhitespace: 'all',
+          autoIndent: 'none',
         }}
       />
     </EditorWrapper>

@@ -5,16 +5,15 @@ module.exports = {
     node: true,
   },
   extends: ['airbnb', 'airbnb-typescript'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    project: './tsconfig.json',
-    ecmaVersion: 12,
+    project: ['./tsconfig.json'],
     sourceType: 'module',
+    tsconfigRootDir: __dirname,
+    ecmaVersion: 12,
+    jsx: true,
   },
   plugins: ['react'],
-  parser: '@typescript-eslint/parser',
   rules: {
     'linebreak-style': 0,
     'implicit-arrow-linebreak': 'off',

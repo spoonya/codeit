@@ -105,7 +105,7 @@ export const TabListItem = styled.li`
 
 export const TabSubListItem = styled.li`
   &:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
   }
 `;
 
