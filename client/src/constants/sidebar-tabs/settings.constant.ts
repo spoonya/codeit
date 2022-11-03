@@ -77,7 +77,7 @@ export const settings: Settings = {
     storage: 'codeit-live',
   },
   layout: {
-    defaultValue: 'horizontal',
+    defaultValue: 'vertical',
     values: {
       horizontal: 'horizontal',
       vertical: 'vertical',

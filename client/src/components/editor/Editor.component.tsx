@@ -82,7 +82,7 @@ export function CodeEditor(props: CodeEditorProps) {
           },
           tabSize: +getStorage(settings.indentSize.storage) || settings.indentSize.defaultValue,
           fontSize: +getStorage(settings.fontSize.storage) || settings.fontSize.defaultValue,
-          insertWhiteSpace: getStorage(settings.indentType.storage)
+          insertSpaces: getStorage(settings.indentType.storage)
             ? parseBooleanString(getStorage(settings.indentType.storage))
             : settings.indentType.defaultValue,
           wordWrap: 'on',

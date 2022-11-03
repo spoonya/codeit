@@ -44,8 +44,8 @@ const russian: Localization = {
         layout: {
           title: 'Вид окон',
           values: {
-            vertical: 'вертикально',
-            horizontal: 'горизонтально',
+            vertical: 'вертикальный',
+            horizontal: 'горизонтальный',
           },
         },
       },
