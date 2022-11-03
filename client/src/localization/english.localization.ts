@@ -4,6 +4,9 @@ const english: Localization = {
   header: {
     signIn: 'Sign In',
     run: 'Run',
+    projectName: {
+      alert: 'Project name changed',
+    },
   },
   form: {
     signIn: 'Sign In',
@@ -26,6 +29,12 @@ const english: Localization = {
     sidebar: {
       share: 'Share',
       settings: 'Settings',
+    },
+    header: {
+      projectName: {
+        edit: 'Edit name',
+        save: 'Save',
+      },
     },
   },
   sidebar: {

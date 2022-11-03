@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Alert,
   Button,
   Dialog,
   DialogActions,
@@ -9,14 +8,14 @@ import {
   FormControl,
   FormControlLabel,
   IconButton,
-  Snackbar,
   Switch,
   TextField,
 } from '@mui/material';
-import { Share, Close, Check } from '@mui/icons-material';
+import { Share, Close } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 
 import { Tooltip } from '../tooltip/Tooltip.component';
+import { Snackbar } from '../snackbar/Snackbar.component';
 import {
   Container,
   Menu,
@@ -177,23 +176,14 @@ Sidebar.ShareLink = function ShareLink() {
 
   return (
     <>
+      <Snackbar
+        openAlert={openAlert}
+        handleCloseAlert={handleCloseAlert}
+        alertText={t('sidebar.share.alert')}
+      />
       <Tooltip title={t('tooltips.sidebar.share')}>
         <Share style={{ fontSize: 30 }} onClick={handleOpenModal} />
       </Tooltip>
-      <Snackbar
-        open={openAlert}
-        autoHideDuration={2500}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        onClose={handleCloseAlert}
-      >
-        <Alert
-          icon={<Check fontSize="inherit" sx={{ color: '#fff' }} />}
-          severity="success"
-          sx={{ width: '100%', fontSize: 16, backgroundColor: '#485fe0', color: '#fff' }}
-        >
-          {t('sidebar.share.alert')}
-        </Alert>
-      </Snackbar>
       <Dialog
         fullWidth
         onClose={handleCloseModal}

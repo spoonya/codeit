@@ -5,3 +5,4 @@ export * from './header/Header.component';
 export * from './output/Output.component';
 export * from './sidebar/Sidebar.component';
 export * from './tooltip/Tooltip.component';
+export * from './snackbar/Snackbar.component';

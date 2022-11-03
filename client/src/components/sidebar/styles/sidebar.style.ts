@@ -131,6 +131,7 @@ export const TabSwitch = styled.div`
 
 export const TabSelect = styled.div`
   .MuiFormControl-root {
+    width: 95%;
     margin: 0;
     min-width: 145px;
   }

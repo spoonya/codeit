@@ -2,6 +2,9 @@ export default interface Localization {
   header: {
     signIn: string;
     run: string;
+    projectName: {
+      alert: string;
+    };
   };
   form: {
     signIn: string;
@@ -24,6 +27,12 @@ export default interface Localization {
     sidebar: {
       share: string;
       settings: string;
+    };
+    header: {
+      projectName: {
+        edit: string;
+        save: string;
+      };
     };
   };
   sidebar: {

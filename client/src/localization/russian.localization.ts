@@ -4,6 +4,9 @@ const russian: Localization = {
   header: {
     signIn: 'Войти',
     run: 'Запуск',
+    projectName: {
+      alert: 'Имя проекта изменено',
+    },
   },
   form: {
     signIn: 'Вход',
@@ -26,6 +29,12 @@ const russian: Localization = {
     sidebar: {
       share: 'Поделиться',
       settings: 'Настройки',
+    },
+    header: {
+      projectName: {
+        edit: 'Изменить имя',
+        save: 'Сохранить',
+      },
     },
   },
   sidebar: {

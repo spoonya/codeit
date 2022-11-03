@@ -13,7 +13,7 @@ export const Inner = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  padding: 7px 15px;
+  padding: 6px 15px;
 
   width: 100%;
 `;
@@ -34,8 +34,28 @@ export const Logo = styled.h1`
   }
 `;
 
-export const ProjectTitle = styled.h2`
+export const ProjectTitle = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  max-width: 300px;
+
+  padding-left: 30px;
+`;
+
+export const ProjectTitleInput = styled.input`
   font-size: 16px;
+
+  width: 100%;
+
+  &::-moz-selection {
+    background: ${({ theme }) => theme.primary.main};
+  }
+
+  &::selection {
+    background: ${({ theme }) => theme.primary.main};
+  }
 `;
 
 export const SignIn = styledMUI(Button)(({ theme }) => ({

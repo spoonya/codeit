@@ -23,7 +23,7 @@ export function HeaderContainer(props: HeaderProps) {
     <Header>
       <Header.Group>
         <Header.Logo />
-        <Header.ProjectTitle>Project</Header.ProjectTitle>
+        <Header.ProjectTitle value="Project 1" />
       </Header.Group>
       <Header.Run onClick={handleClick} />
       <Header.SignIn />

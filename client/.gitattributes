@@ -1,5 +1,6 @@
 text=lf
 * linguist-vendored
+*.* linguist-language=TypeScript
 *.html linguist-detectable=false
 *.css linguist-vendored eol=lf
 *.scss linguist-vendored eol=lf
