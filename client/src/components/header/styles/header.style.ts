@@ -38,21 +38,25 @@ export const ProjectTitle = styled.h2`
   font-size: 16px;
 `;
 
-export const SignIn = styled.button`
-  font-size: 14px;
-  color: ${({ theme }) => theme.white.primary};
-
-  padding: 5px;
-
-  background-color: ${({ theme }) => theme.primary.main};
-  border-radius: 3px;
-
-  transition: background-color 0.1s linear;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.primary.dark};
-  }
-`;
+export const SignIn = styledMUI(Button)(({ theme }) => ({
+  textTransform: 'none',
+  backgroundColor: theme.palette.primary.main,
+  color: theme.palette.common.white,
+  fontSize: 14,
+  boxShadow: 'none',
+  height: '28px',
+  padding: '5px 10px',
+  '&:hover': {
+    boxShadow: 'none',
+    backgroundColor: theme.palette.primary.dark,
+  },
+  '&:active': {
+    boxShadow: 'none',
+  },
+  '&:focus': {
+    boxShadow: 'none',
+  },
+}));
 
 export const Run = styledMUI(Button)(({ theme }) => ({
   textTransform: 'none',
