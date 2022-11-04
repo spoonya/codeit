@@ -10,6 +10,7 @@ import {
   Menu,
   ListItemIcon,
   Box,
+  Typography,
 } from '@mui/material';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
@@ -17,8 +18,6 @@ import TabPanel from '@mui/lab/TabPanel';
 import { useTranslation } from 'react-i18next';
 import { Close, Edit, Check, Logout, Person } from '@mui/icons-material';
 import MenuItem from '@mui/material/MenuItem';
-
-import { Tooltip } from '../tooltip/Tooltip.component';
 
 import {
   Container,
@@ -32,6 +31,7 @@ import {
 } from './styles/header.style';
 import { FormSignIn, FormSignUp } from '../forms';
 import { Snackbar } from '../snackbar/Snackbar.component';
+import { Tooltip } from '../tooltip/Tooltip.component';
 
 interface InnerProps {
   children: React.ReactNode;
@@ -251,18 +251,21 @@ Header.ProfileMenu = function HeaderProfileMenu() {
   return (
     <>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <Tooltip title={t('tooltips.header.profile.navButton')}>
-          <IconButton
-            onClick={handleClick}
-            size="small"
-            sx={{ ml: 2 }}
-            aria-controls={open ? 'account-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
-          >
-            <Avatar src="img/user.jpg" sx={{ width: 28, height: 28 }} />
-          </IconButton>
-        </Tooltip>
+        <Typography fontSize="14px">Username</Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+          <Tooltip title={t('tooltips.header.profile.navButton')}>
+            <IconButton
+              onClick={handleClick}
+              size="small"
+              sx={{ ml: 1 }}
+              aria-controls={open ? 'account-menu' : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? 'true' : undefined}
+            >
+              <Avatar src="img/user.jpg" sx={{ width: 28, height: 28 }} />
+            </IconButton>
+          </Tooltip>
+        </Box>
       </Box>
       <Menu
         anchorEl={anchorEl}

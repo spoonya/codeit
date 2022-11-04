@@ -26,8 +26,8 @@ export function HeaderContainer(props: HeaderProps) {
         <Header.ProjectTitle value="Project 1" />
       </Header.Group>
       <Header.Run onClick={handleClick} />
-      <Header.SignIn />
-      {/* <Header.ProfileMenu /> */}
+      {/* <Header.SignIn /> */}
+      <Header.ProfileMenu />
     </Header>
   );
 }
