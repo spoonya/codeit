@@ -35,6 +35,13 @@ const english: Localization = {
         edit: 'Edit name',
         save: 'Save',
       },
+      profile: {
+        navButton: 'Account',
+        menu: {
+          profile: 'Profile',
+          logout: 'Logout',
+        },
+      },
     },
   },
   sidebar: {

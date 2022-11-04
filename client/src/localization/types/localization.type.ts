@@ -33,6 +33,13 @@ export default interface Localization {
         edit: string;
         save: string;
       };
+      profile: {
+        navButton: string;
+        menu: {
+          profile: string;
+          logout: string;
+        };
+      };
     };
   };
   sidebar: {

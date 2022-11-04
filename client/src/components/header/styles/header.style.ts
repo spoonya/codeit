@@ -3,9 +3,11 @@ import styled from 'styled-components/macro';
 import { styled as styledMUI } from '@mui/material/styles';
 
 export const Container = styled.header`
+  display: flex;
+  align-items: center;
   background-color: ${({ theme }) => theme.background.secondary};
   border-bottom: 1px solid ${({ theme }) => theme.myDivider};
-  height: 42px;
+  height: 50px;
 `;
 
 export const Inner = styled.div`
@@ -79,6 +81,9 @@ export const SignIn = styledMUI(Button)(({ theme }) => ({
 }));
 
 export const Run = styledMUI(Button)(({ theme }) => ({
+  position: 'absolute',
+  left: '50%',
+  transform: 'translateX(-50%)',
   textTransform: 'none',
   backgroundColor: theme.palette.common.green.primary,
   fontSize: 14,

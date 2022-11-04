@@ -35,6 +35,13 @@ const russian: Localization = {
         edit: 'Изменить имя',
         save: 'Сохранить',
       },
+      profile: {
+        navButton: 'Аккаунт',
+        menu: {
+          profile: 'Профиль',
+          logout: 'Выйти',
+        },
+      },
     },
   },
   sidebar: {
