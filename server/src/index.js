@@ -1,12 +1,20 @@
 import express from "express";
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const port = 4000;
 
+const {
+  DB_LOGIN: login,
+  DB_PASSWORD: password
+} = process.env;
+
 mongoose
   .connect(
-    "mongodb+srv://spoonya:serega2503@cluster0.kx047.mongodb.net/?retryWrites=true&w=majority"
+    `mongodb+srv://${login}:${password}@cluster0.kx047.mongodb.net/?retryWrites=true&w=majority`
   )
   .then(() => console.log("DB is ok"))
   .catch((err) => console.log("DB error", err));

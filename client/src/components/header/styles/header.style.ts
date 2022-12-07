@@ -7,7 +7,7 @@ export const Container = styled.header`
   align-items: center;
   background-color: ${({ theme }) => theme.background.secondary};
   border-bottom: 1px solid ${({ theme }) => theme.myDivider};
-  height: 50px;
+  height: 42px;
 `;
 
 export const Inner = styled.div`
@@ -15,7 +15,7 @@ export const Inner = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  padding: 6px 15px;
+  padding: 2px 15px;
 
   width: 100%;
 `;
@@ -47,7 +47,7 @@ export const ProjectTitle = styled.div`
 `;
 
 export const ProjectTitleInput = styled.input`
-  font-size: 16px;
+  font-size: 14px;
 
   width: 100%;
 
@@ -88,8 +88,8 @@ export const Run = styledMUI(Button)(({ theme }) => ({
   backgroundColor: theme.palette.common.green.primary,
   fontSize: 14,
   boxShadow: 'none',
-  height: '28px',
-  padding: '5px 10px',
+  height: '24px',
+  padding: '4px 10px',
   '&:hover': {
     boxShadow: 'none',
     backgroundColor: theme.palette.common.green.secondary,

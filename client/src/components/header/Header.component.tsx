@@ -130,7 +130,7 @@ Header.ProjectTitle = function HeaderProjectTitleInput(props: EditProps) {
                 left: 0,
                 padding: '5px',
                 '& svg': {
-                  fontSize: '20px',
+                  fontSize: '18px',
                 },
               }}
             >
@@ -147,7 +147,7 @@ Header.ProjectTitle = function HeaderProjectTitleInput(props: EditProps) {
                 left: 0,
                 padding: '5px',
                 '& svg': {
-                  fontSize: '20px',
+                  fontSize: '18px',
                   color: 'common.green.primary',
                 },
               }}
