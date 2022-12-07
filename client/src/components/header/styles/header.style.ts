@@ -88,7 +88,7 @@ export const Run = styledMUI(Button)(({ theme }) => ({
   backgroundColor: theme.palette.common.green.primary,
   fontSize: 14,
   boxShadow: 'none',
-  height: '24px',
+  height: '28px',
   padding: '4px 10px',
   '&:hover': {
     boxShadow: 'none',
