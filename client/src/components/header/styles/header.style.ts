@@ -7,7 +7,7 @@ export const Container = styled.header`
   align-items: center;
   background-color: ${({ theme }) => theme.background.secondary};
   border-bottom: 1px solid ${({ theme }) => theme.myDivider};
-  height: 42px;
+  height: var(--header-height);
 `;
 
 export const Inner = styled.div`
@@ -15,7 +15,7 @@ export const Inner = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  padding: 2px 15px;
+  padding: 0 15px;
 
   width: 100%;
 `;
@@ -66,7 +66,7 @@ export const SignIn = styledMUI(Button)(({ theme }) => ({
   color: theme.palette.common.white,
   fontSize: 14,
   boxShadow: 'none',
-  height: '28px',
+  height: '27px',
   padding: '5px 10px',
   '&:hover': {
     boxShadow: 'none',
@@ -88,7 +88,7 @@ export const Run = styledMUI(Button)(({ theme }) => ({
   backgroundColor: theme.palette.common.green.primary,
   fontSize: 14,
   boxShadow: 'none',
-  height: '28px',
+  height: '27px',
   padding: '4px 10px',
   '&:hover': {
     boxShadow: 'none',

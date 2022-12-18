@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   display: flex;
   overflow: hidden;
   width: 100%;
-  height: calc(100vh - 50px);
+  height: calc(100vh - var(--header-height));
 `;
 
 const Inner = styled.div`

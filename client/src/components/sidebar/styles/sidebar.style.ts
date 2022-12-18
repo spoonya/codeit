@@ -17,7 +17,7 @@ export const Menu = styled.ul`
   align-items: center;
 
   height: 100%;
-  width: 42px;
+  width: var(--header-height);
 
   padding: 15px 7px 0;
 `;
